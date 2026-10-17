@@ -1,0 +1,53 @@
+name: Publish obfuscated scripts
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish.yml'
+      - 'tools/build.mjs'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: morantx-release
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout release repository
+        uses: actions/checkout@v4
+
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+        with:
+          repository: lildanlid1/MorantxHub-Scripts
+          path: _source
+          token: ${{ secrets.SOURCE_REPO_TOKEN || github.token }}
+          persist-credentials: false
+
+      - name: Obfuscate and verify round trips
+        run: node tools/build.mjs _source .
+
+      - name: Test Lua runtime decoder
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y lua5.2
+          lua5.2 -e 'loadstring=load; assert(dofile(".obfuscation-smoke.lua") == 15)'
+
+      - name: Preserve bundled UI assets
+        run: cp -a _source/assets ./assets
+
+      - name: Publish release
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A README.md games.md games.json TESTING.md build-report.json loader.lua scripts library assets
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish obfuscated scripts"
+            git push origin HEAD:main
+          fi
