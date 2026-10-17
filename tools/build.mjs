@@ -10,51 +10,95 @@ const base64='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
 function files(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(x=>x.isDirectory()?files(path.join(dir,x.name)):[path.join(dir,x.name)]);}
 function save(name,data){const p=path.join(output,name);fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,data);}
 function check(bytes){let a=1,b=0;for(const x of bytes){a=(a+x)%65521;b=(b+a)%65521;}return b*65536+a;}
+
+const alphabetBase=Array.from({length:94},(_,i)=>String.fromCharCode(i+33)).filter(c=>c!=="'"&&c!=='"'&&c!=='\\');
+function next32(s){s^=s<<13;s^=s>>>17;s^=s<<5;return s>>>0;}
+function encode85(bytes,alphabet){
+ let result='';
+ for(let i=0;i<bytes.length;i+=4){
+   let v=((bytes[i]||0)*16777216+(bytes[i+1]||0)*65536+(bytes[i+2]||0)*256+(bytes[i+3]||0))>>>0;
+   const digits=Array(5);
+   for(let j=4;j>=0;j--){digits[j]=alphabet[v%85];v=Math.floor(v/85);}
+   result+=digits.slice(0,Math.min(4,bytes.length-i)+1).join('');
+ }
+ return result;
+}
 function protect(source,name){
- const bytes=Buffer.from(source,'utf8'), hash=crypto.createHash('sha256').update(name).digest();
- const k1=23+hash[0]%200,k2=13+hash[1]%210;
- const letters=base64.split('');
- for(let i=63;i>0;i--){let j=hash[i%32]%(i+1);[letters[i],letters[j]]=[letters[j],letters[i]];}
- const alphabet=letters.join(''), encodedBytes=Buffer.alloc(bytes.length);
- for(let i=0;i<bytes.length;i++){const n=i+1;encodedBytes[i]=((bytes[i]+(k2+n*19)%256)%256)^((k1+n*73+Math.floor(n/251)*17)%256);}
- const encoded=encodedBytes.toString('base64').replace(/=+$/,'').replace(/\+/g,'-').replace(/\//g,'_').replace(/[A-Za-z0-9_-]/g,c=>alphabet[base64.indexOf(c)]);
- const backward=Buffer.from(encoded.replace(/[A-Za-z0-9_-]/g,c=>base64[alphabet.indexOf(c)]).replace(/-/g,'+').replace(/_/g,'/'),'base64');
- if(!backward.equals(encodedBytes))throw Error('Base64 failed: '+name);
- for(let i=0;i<bytes.length;i++){const n=i+1;let x=(backward[i]^((k1+n*73+Math.floor(n/251)*17)%256));x=(x-(k2+n*19)%256+256)%256;if(bytes[i]!==x)throw Error('Decoder failed: '+name+':'+i);}
- const chunks=encoded.match(/.{1,8192}/g)||[''];
+ const raw=Buffer.from(source,'utf8');
+ const fingerprint=crypto.createHash('sha256').update(Buffer.concat([Buffer.from(name+'\0','utf8'),raw])).digest();
+ const key=fingerprint.readUInt32LE(0)||0x52adb002;
+ const letters=alphabetBase.slice();
+ let state=(key^0x92dc6a4f)>>>0;
+ for(let i=letters.length-1;i>0;i--){state=next32(state);const j=state%(i+1);[letters[i],letters[j]]=[letters[j],letters[i]];}
+ const alphabet=letters.slice(0,85).join('');
+ const blockSize=2048,chunks=[],seeds=[];
+ for(let start=0;start<raw.length;start+=blockSize){
+   const block=raw.subarray(start,Math.min(start+blockSize,raw.length));
+   const index=start/blockSize;
+   let s=(key^Math.imul(index+1,0x9e3779b1)^fingerprint.readUInt32LE(4))>>>0;
+   if(s===0)s=0x1f842dc5;
+   seeds.push(s);
+   let current=s;
+   const encrypted=Buffer.alloc(block.length);
+   for(let i=0;i<block.length;i++){
+     current=next32(current);
+     let v=raw[start+i]^(current&255);
+     v=(v+((current>>>8)&255))&255;
+     v=((v<<3)|(v>>>5))&255;
+     encrypted[i]=v^((current>>>16)&255);
+   }
+   chunks.push(encode85(encrypted,alphabet));
+ }
+ const order=chunks.map((_,i)=>i);
+ for(let i=order.length-1;i>0;i--){state=next32(state);const j=state%(i+1);[order[i],order[j]]=[order[j],order[i]];}
+ const positions=Array(order.length);
+ order.forEach((logical,stored)=>positions[logical]=stored+1);
+ const shuffled=order.map(index=>chunks[index]);
+ const names=Array.from({length:11},(_,i)=>'_'+fingerprint.toString('hex').slice(i*2,i*2+6)+'_'+i.toString(36));
  const lua=[
- 'local Z={'+chunks.map(JSON.stringify).join(',\n')+'}',
- 'local A='+JSON.stringify(alphabet),
- 'local M={}',
- 'for i=1,#A do M[string.byte(A,i)]=i-1 end',
- 'local D=table.concat(Z)',
- 'local B,C={},{}',
- 'local N,Q,P=0,0,0',
- 'local S,T=1,0',
- 'for i=1,#D do',
- ' local V=M[string.byte(D,i)]',
- ' if V~=nil then',
- '  N=N*64+V;Q=Q+6',
- '  if Q>=8 then',
- '   Q=Q-8;P=P+1',
- '   local X=math.floor(N/(2^Q))%256',
- '   local Y=(bit32.bxor(X,('+k1+'+P*73+math.floor(P/251)*17)%256)-('+k2+'+P*19)%256+256)%256',
- '   S=(S+Y)%65521;T=(T+S)%65521',
- '   B[#B+1]=string.char(Y)',
- '   if #B==2048 then C[#C+1]=table.concat(B);B={} end',
- '   N=N%(2^Q)',
+ 'local '+names[0]+'={'+shuffled.map(JSON.stringify).join(',\n')+'}',
+ 'local '+names[1]+'={'+positions.join(',')+'}',
+ 'local '+names[2]+'={'+seeds.join(',')+'}',
+ 'local '+names[3]+'='+JSON.stringify(alphabet),
+ 'local '+names[4]+'={}',
+ 'for i=1,#'+names[3]+' do '+names[4]+'[string.byte('+names[3]+',i)]=i-1 end',
+ 'local '+names[5]+'={}',
+ 'local '+names[6]+','+names[7]+'=1,0',
+ 'local function '+names[8]+'(s) s=bit32.bxor(s,bit32.lshift(s,13));s=bit32.bxor(s,bit32.rshift(s,17));s=bit32.bxor(s,bit32.lshift(s,5));return s end',
+ 'for block=1,#'+names[1]+' do',
+ ' local part='+names[0]+'['+names[1]+'[block]]',
+ ' local remaining=math.min('+blockSize+','+raw.length+'-(block-1)*'+blockSize+')',
+ ' local seed='+names[2]+'[block]',
+ ' local pieces,n={},0',
+ ' for at=1,#part,5 do',
+ '  local width=math.min(5,#part-at+1)',
+ '  local value=0',
+ '  for j=0,width-1 do local digit='+names[4]+'[string.byte(part,at+j)];if digit==nil then error("Corrupt protected payload",0) end;value=value*85+digit end',
+ '  for j=width+1,5 do value=value*85+84 end',
+ '  for j=1,math.min(width-1,remaining-n) do',
+ '   local exponent=2^(8*(4-j))',
+ '   local byte=math.floor(value/exponent)%256',
+ '   seed='+names[8]+'(seed)',
+ '   byte=bit32.bxor(byte,bit32.band(bit32.rshift(seed,16),255))',
+ '   byte=(math.floor(byte/8)+(byte%8)*32)%256',
+ '   byte=(byte-bit32.band(bit32.rshift(seed,8),255)+256)%256',
+ '   byte=bit32.bxor(byte,bit32.band(seed,255))',
+ '   '+names[6]+'=('+names[6]+'+byte)%65521;'+names[7]+'=('+names[7]+'+'+names[6]+')%65521',
+ '   n=n+1;pieces[n]=string.char(byte)',
  '  end',
  ' end',
+ ' if n~=remaining then error("Protected payload length mismatch",0) end',
+ ' '+names[5]+'[block]=table.concat(pieces)',
  'end',
- 'if #B>0 then C[#C+1]=table.concat(B) end',
- 'if P~='+bytes.length+' or T*65536+S~='+check(bytes)+' then error("Corrupt MorantxHub script: '+name+'",0) end',
- 'local F,E=loadstring(table.concat(C),'+JSON.stringify('@'+name)+')',
- 'if not F then error("Compile error in '+name+': "..tostring(E),0) end',
- 'return F()',
+ 'if '+names[7]+'*65536+'+names[6]+'~='+check(raw)+' then error("Protected payload integrity failure",0) end',
+ 'local '+names[9]+','+names[10]+'=loadstring(table.concat('+names[5]+'),'+JSON.stringify('@'+name)+')',
+ 'if not '+names[9]+' then error("Protected script compile failure: "..tostring('+names[10]+'),0) end',
+ 'return '+names[9]+'()',
  ''
  ].join('\n');
  return lua;
 }
+
 const catalog=JSON.parse(fs.readFileSync(path.join(input,'games.json'),'utf8'));
 const all=files(path.join(input,'scripts')).filter(x=>x.endsWith('.lua'));
 const paths=all.map(p=>path.relative(input,p).replace(/\\/g,'/')),known=new Set(paths),seen=new Set(),duplicates=[];
