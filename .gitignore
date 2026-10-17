@@ -1,0 +1,3 @@
+_source/
+.obfuscation-smoke.lua
+node_modules/
