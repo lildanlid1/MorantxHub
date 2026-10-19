@@ -1,41 +1,101 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import os from 'node:os';
-import {spawnSync} from 'node:child_process';
-const source=path.resolve(process.argv[2]||'_source');
-const release=path.resolve(process.argv[3]||'.');
-const oldUrl='https://raw.githubusercontent.com/lildanlid1/MorantxHub-Scripts/main/';
-const newUrl='https://raw.githubusercontent.com/lildanlid1/MorantxHub/main/';
-const files=folder=>fs.readdirSync(folder,{withFileTypes:true}).flatMap(entry=>entry.isDirectory()?files(path.join(folder,entry.name)):[path.join(folder,entry.name)]);
-const original=JSON.parse(fs.readFileSync(path.join(source,'games.json'),'utf8'));
-const published=JSON.parse(fs.readFileSync(path.join(release,'games.json'),'utf8'));
-if(JSON.stringify(original)!==JSON.stringify(published))throw Error('Published game catalog differs from source');
-const sourcePaths=files(path.join(source,'scripts')).filter(x=>x.endsWith('.lua')).map(x=>path.relative(source,x).replace(/\\/g,'/'));
-const releasePaths=files(path.join(release,'scripts')).filter(x=>x.endsWith('.lua')).map(x=>path.relative(release,x).replace(/\\/g,'/'));
-if(sourcePaths.length!==releasePaths.length||releasePaths.some(x=>!sourcePaths.includes(x)))throw Error('Published game scripts differ from source');
-const listed=new Set(original.games.map(x=>x.path));
-for(const row of original.games)if(!sourcePaths.includes(row.path))throw Error('Missing catalog script: '+row.path);
-for(const kind of ['ids','names'])for(const [key,row] of Object.entries(original[kind]||{}))if(!listed.has(row.path))throw Error('Invalid '+kind+' mapping: '+key);
-if(!listed.has(original.names.universal?.path))throw Error('Universal fallback missing');
-if(!Object.keys(original.ids).length)throw Error('Game ID mappings missing');
-const paths=['loader.lua','library/MorantxUI.lua',...sourcePaths];
-for(const name of paths){
- const script=fs.readFileSync(path.join(release,name),'utf8');
- if(!script.includes('bit32.bxor')||!script.includes('loadstring(table.concat')||script.includes(oldUrl))throw Error('Invalid protected script: '+name);
+import crypto from 'node:crypto';
+
+const src = path.resolve(process.argv[2] || '_source');
+const dst = path.resolve(process.argv[3] || '.');
+const oldUrl = 'https://raw.githubusercontent.com/lildanlid1/MorantxHub-Scripts/main/';
+const newUrl = 'https://raw.githubusercontent.com/lildanlid1/MorantxHub/main/';
+const fail = message => { throw new Error(message); };
+const walk = dir => fs.readdirSync(dir, { withFileTypes: true }).flatMap(e =>
+  e.isDirectory() ? walk(path.join(dir, e.name)) : [path.join(dir, e.name)]);
+const relative = file => path.relative(src, file).split(path.sep).join('/');
+const sourceText = p => fs.readFileSync(path.join(src, p), 'utf8').split(oldUrl).join(newUrl);
+const releaseText = p => fs.readFileSync(path.join(dst, p), 'utf8');
+const same = (a, b) => Buffer.compare(a, b) === 0;
+function unpack(wrapper, file, expectedLength) {
+  const layered = wrapper.match(/^local Z=\{([\s\S]*?)\}\nlocal A=("(?:\\.|[^"\\])*")\n/);
+  const legacy = wrapper.match(/^local a=\{([\s\S]*?)\}\nlocal k=(\d+)/);
+  if (!layered && !legacy) fail('Not an obfuscated Lua file: ' + file);
+  const parts = JSON.parse('[' + (layered ? layered[1] : legacy[1]) + ']');
+  const alphabet = layered ? JSON.parse(layered[2]) :
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+  if (alphabet.length !== 64 || new Set(alphabet).size !== 64) fail('Invalid alphabet: ' + file);
+  const constants = layered && wrapper.match(/bit32\.bxor\(X,\((\d+)\+P\*73\+math\.floor\(P\/251\)\*17\)%256\)-\((\d+)\+P\*19\)%256/);
+  const declared = layered && wrapper.match(/if P~=(\d+) or T\*65536\+S~=(\d+) then/);
+  if (layered && (!constants || !declared)) fail('Invalid layered decoder: ' + file);
+  if (!wrapper.includes('return F()')) fail('Missing execution wrapper: ' + file);
+  const k1 = layered ? Number(constants[1]) : Number(legacy[2]);
+  const k2 = layered ? Number(constants[2]) : 0;
+  const declaredLength = layered ? Number(declared[1]) : expectedLength;
+  const declaredChecksum = layered ? Number(declared[2]) : null;
+  if (declaredLength !== expectedLength) fail('Incorrect declared byte count: ' + file);
+  const output = Buffer.alloc(declaredLength);
+  const values = new Map(Array.from(alphabet).map((c, i) => [c, i]));
+  let accumulator = 0, bits = 0, count = 0, a = 1, b = 0;
+  for (const part of parts) for (const ch of part) {
+    const value = values.get(ch);
+    if (value === undefined) {
+      if (!layered && ch === '=') continue;
+      fail('Invalid encoded byte: ' + file);
+    }
+    accumulator = accumulator * 64 + value;
+    bits += 6;
+    if (bits >= 8) {
+      bits -= 8;
+      count++;
+      if (count > expectedLength) fail('Decoded overflow: ' + file);
+      const x = Math.floor(accumulator / (2 ** bits)) % 256;
+      const y = layered ?
+        ((x ^ ((k1 + count * 73 + Math.floor(count / 251) * 17) % 256)) -
+          ((k2 + count * 19) % 256) + 256) % 256 :
+        x ^ ((k1 + ((count - 1) * 73) % 251) % 256);
+      output[count - 1] = y;
+      a = (a + y) % 65521;
+      b = (b + a) % 65521;
+      accumulator %= 2 ** bits;
+    }
+  }
+  if (count !== expectedLength || (layered && b * 65536 + a !== declaredChecksum))
+    fail('Decoded length/checksum mismatch: ' + file);
+  return output;
 }
-const samples=['loader.lua','library/MorantxUI.lua','scripts/Sell-Lemons.lua','scripts/RIVALS.lua','scripts/Blox-Fruits.lua'];
-const biggest=sourcePaths.slice().sort((a,b)=>fs.statSync(path.join(source,b)).size-fs.statSync(path.join(source,a)).size)[0];
-if(biggest)samples.push(biggest);
-const temp=fs.mkdtempSync(path.join(os.tmpdir(),'morantx-release-'));
-try{
- const validator=path.join(temp,'check.lua');
- fs.writeFileSync(validator,'local f=assert(io.open(arg[2],"rb"));local expected=f:read("*a");f:close()\nloadstring=function(text,label) assert(text==expected,"Decoder changed source: "..tostring(label));return function() return 421 end end\nassert(dofile(arg[1])==421)\n');
- for(const name of [...new Set(samples)]){
-   if(!fs.existsSync(path.join(source,name)))continue;
-   const exact=fs.readFileSync(path.join(source,name),'utf8').split(oldUrl).join(newUrl);
-   const desired=path.join(temp,'expected.lua');fs.writeFileSync(desired,exact);
-   const p=spawnSync(process.env.LUA_BIN||'lua5.2',[validator,path.join(release,name),desired],{encoding:'utf8',timeout:120000});
-   if(p.status!==0)throw Error('Lua decoder verification failed: '+name+': '+(p.stderr||p.stdout||p.error));
- }
-}finally{fs.rmSync(temp,{recursive:true,force:true});}
-console.log(JSON.stringify({status:'passed',games:original.games.length,ids:Object.keys(original.ids).length,luaFiles:paths.length}));
+const catalog = JSON.parse(fs.readFileSync(path.join(src, 'games.json'), 'utf8'));
+const sourceLua = ['loader.lua', 'library/MorantxUI.lua', ...walk(path.join(src, 'scripts'))
+  .filter(f => f.endsWith('.lua')).map(relative).sort()];
+const expectedLua = new Set(sourceLua);
+if (catalog.games.length !== new Set(catalog.games.map(g => g.path)).size)
+  fail('Duplicate game path in catalog');
+for (const g of catalog.games)
+  if (!expectedLua.has(g.path)) fail('Missing listed game script: ' + g.path);
+for (const [id, g] of Object.entries(catalog.ids || {}))
+  if (!expectedLua.has(g.path)) fail('Invalid game ID mapping: ' + id);
+for (const [name, g] of Object.entries(catalog.names || {}))
+  if (!expectedLua.has(g.path)) fail('Invalid name mapping: ' + name);
+if (!catalog.games.some(g => g.path === 'scripts/Universal.lua') ||
+    !catalog.games.some(g => g.path === 'scripts/Sell-Lemons.lua'))
+  fail('Missing baseline game entries');
+for (const file of sourceLua) {
+  const expected = Buffer.from(sourceText(file), 'utf8');
+  const actual = unpack(releaseText(file), file, expected.length);
+  if (!same(actual, expected)) fail('Decoded source mismatch: ' + file);
+}
+if (!same(Buffer.from(releaseText('games.json')), Buffer.from(JSON.stringify(catalog, null, 2) + '\n')))
+  fail('Game catalog mismatch');
+if (releaseText('games.md') !== sourceText('games.md')) fail('Game list mismatch');
+const assets = walk(path.join(src, 'assets')).map(relative);
+for (const asset of assets) {
+  const source = fs.readFileSync(path.join(src, asset));
+  const release = fs.readFileSync(path.join(dst, asset));
+  const hash = b => crypto.createHash('sha256').update(b).digest('hex');
+  if (hash(source) !== hash(release)) fail('Artwork mismatch: ' + asset);
+}
+const report = {
+  verifiedLua: sourceLua.length,
+  verifiedAssets: assets.length,
+  uniqueCatalogEntries: catalog.games.length,
+  gameSpecificEntries: catalog.games.filter(g => g.path !== 'scripts/Universal.lua').length,
+  sourceReferencesRedirectedToRelease: true,
+  testType: 'Byte-exact static decode/integrity checks, not live Roblox execution'
+};
+console.log(JSON.stringify(report, null, 2));

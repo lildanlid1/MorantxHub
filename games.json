@@ -1,0 +1,2540 @@
+{
+  "games": [
+    {
+      "path": "scripts/Universal.lua",
+      "name": "Universal"
+    },
+    {
+      "path": "scripts/Anime-Dice.lua",
+      "name": "Anime Dice"
+    },
+    {
+      "path": "scripts/Build-and-Kill-Zombies.lua",
+      "name": "Build and Kill Zombies"
+    },
+    {
+      "path": "scripts/Clicker-Simulator.lua",
+      "name": "Clicker Simulator"
+    },
+    {
+      "path": "scripts/Phantom-Forces.lua",
+      "name": "Phantom Forces"
+    },
+    {
+      "path": "scripts/Mrbeast-Island-Escape.lua",
+      "name": "Mrbeast Island Escape"
+    },
+    {
+      "path": "scripts/Find-the-Egg-for-a-Brainrot.lua",
+      "name": "Find the Egg for a Brainrot"
+    },
+    {
+      "path": "scripts/Loot-Evo.lua",
+      "name": "Loot Evo"
+    },
+    {
+      "path": "scripts/Sell-Lemons.lua",
+      "name": "Sell Lemons"
+    },
+    {
+      "path": "scripts/Sell-Ores.lua",
+      "name": "Sell Ores"
+    },
+    {
+      "path": "scripts/Drill-Blocks-for-Brainrots.lua",
+      "name": "Drill Blocks for Brainrots"
+    },
+    {
+      "path": "scripts/Make-a-Drill-Farm.lua",
+      "name": "Make a Drill Farm"
+    },
+    {
+      "path": "scripts/Skill-Point-Legends.lua",
+      "name": "Skill Point Legends"
+    },
+    {
+      "path": "scripts/Speed-Monkey-Escape.lua",
+      "name": "Speed Monkey Escape"
+    },
+    {
+      "path": "scripts/Dig-Clean.lua",
+      "name": "Dig & Clean"
+    },
+    {
+      "path": "scripts/Muscle-Evolution.lua",
+      "name": "Muscle Evolution"
+    },
+    {
+      "path": "scripts/Power-Per-Click.lua",
+      "name": "Power Per Click"
+    },
+    {
+      "path": "scripts/Drain-Water-Per-Click.lua",
+      "name": "Drain Water Per Click"
+    },
+    {
+      "path": "scripts/Wings-for-Brainrots.lua",
+      "name": "Wings for Brainrots"
+    },
+    {
+      "path": "scripts/Speed-Evolve.lua",
+      "name": "Speed Evolve"
+    },
+    {
+      "path": "scripts/Jetpack-for-Brainrots.lua",
+      "name": "Jetpack for Brainrots"
+    },
+    {
+      "path": "scripts/Mine-Per-Click.lua",
+      "name": "Mine Per Click"
+    },
+    {
+      "path": "scripts/Ammo-Per-Click.lua",
+      "name": "Ammo Per Click"
+    },
+    {
+      "path": "scripts/Aim-Per-Click.lua",
+      "name": "Aim Per Click"
+    },
+    {
+      "path": "scripts/Strength-Per-Click.lua",
+      "name": "Strength Per Click"
+    },
+    {
+      "path": "scripts/Power-Blast-Lucky-Blocks.lua",
+      "name": "Power Blast Lucky Blocks"
+    },
+    {
+      "path": "scripts/Looks-Per-Click.lua",
+      "name": "Looks Per Click"
+    },
+    {
+      "path": "scripts/Pickaxe-Simulator.lua",
+      "name": "Pickaxe Simulator"
+    },
+    {
+      "path": "scripts/Spinjitsu-Escape.lua",
+      "name": "Spinjitsu Escape"
+    },
+    {
+      "path": "scripts/Pull-a-Lucky-Fish.lua",
+      "name": "Pull a Lucky Fish"
+    },
+    {
+      "path": "scripts/Poor-To-Rich.lua",
+      "name": "Poor To Rich"
+    },
+    {
+      "path": "scripts/Logo-f-r-Brainrots.lua",
+      "name": "Logo für Brainrots"
+    },
+    {
+      "path": "scripts/Aura-For-Brainrots.lua",
+      "name": "Aura For Brainrots"
+    },
+    {
+      "path": "scripts/Training-To-Climb.lua",
+      "name": "Training To Climb"
+    },
+    {
+      "path": "scripts/Speed-Training.lua",
+      "name": "Speed Training"
+    },
+    {
+      "path": "scripts/Roll-A-Gnome.lua",
+      "name": "Roll A Gnome"
+    },
+    {
+      "path": "scripts/Arsenal.lua",
+      "name": "Arsenal"
+    },
+    {
+      "path": "scripts/Mine-a-Mountain.lua",
+      "name": "Mine a Mountain"
+    },
+    {
+      "path": "scripts/Spin-a-Gun.lua",
+      "name": "Spin a Gun"
+    },
+    {
+      "path": "scripts/Deagle-Arena.lua",
+      "name": "Deagle Arena"
+    },
+    {
+      "path": "scripts/1-Superhero-Evolution.lua",
+      "name": "1 Superhero Evolution"
+    },
+    {
+      "path": "scripts/TTK-Testing.lua",
+      "name": "TTK Testing"
+    },
+    {
+      "path": "scripts/Cut-Grass-Adventure.lua",
+      "name": "Cut Grass Adventure"
+    },
+    {
+      "path": "scripts/Chop-Trees-for-Treasure.lua",
+      "name": "Chop Trees for Treasure"
+    },
+    {
+      "path": "scripts/Loot-To-Forge.lua",
+      "name": "Loot To Forge"
+    },
+    {
+      "path": "scripts/Redliner.lua",
+      "name": "Redliner"
+    },
+    {
+      "path": "scripts/Roll-A-Pack.lua",
+      "name": "Roll A Pack"
+    },
+    {
+      "path": "scripts/Break-an-Egg.lua",
+      "name": "Break an Egg"
+    },
+    {
+      "path": "scripts/Beat-the-Anime-Boss.lua",
+      "name": "Beat the Anime Boss"
+    },
+    {
+      "path": "scripts/Jump-for-Animals.lua",
+      "name": "Jump for Animals"
+    },
+    {
+      "path": "scripts/Slash-Per-Click.lua",
+      "name": "Slash Per Click"
+    },
+    {
+      "path": "scripts/1-Damage-FPS.lua",
+      "name": "1 Damage FPS"
+    },
+    {
+      "path": "scripts/Airsoft-FE.lua",
+      "name": "Airsoft FE"
+    },
+    {
+      "path": "scripts/Answer-or-Die.lua",
+      "name": "Answer or Die"
+    },
+    {
+      "path": "scripts/Artemis-Royale.lua",
+      "name": "Artemis Royale"
+    },
+    {
+      "path": "scripts/Basketball-Legends.lua",
+      "name": "Basketball Legends"
+    },
+    {
+      "path": "scripts/BBQ-Battles.lua",
+      "name": "BBQ Battles"
+    },
+    {
+      "path": "scripts/Blitz-FPS.lua",
+      "name": "Blitz FPS"
+    },
+    {
+      "path": "scripts/Block-Wars.lua",
+      "name": "Block Wars"
+    },
+    {
+      "path": "scripts/Blood-Zone.lua",
+      "name": "Blood Zone"
+    },
+    {
+      "path": "scripts/Bonk-Block.lua",
+      "name": "Bonk Block"
+    },
+    {
+      "path": "scripts/Cali-Shootout.lua",
+      "name": "Cali Shootout"
+    },
+    {
+      "path": "scripts/Cali-Streets.lua",
+      "name": "Cali Streets"
+    },
+    {
+      "path": "scripts/Chicken-Farm.lua",
+      "name": "Chicken Farm"
+    },
+    {
+      "path": "scripts/Clean-all-the-Leaves.lua",
+      "name": "Clean all the Leaves"
+    },
+    {
+      "path": "scripts/Counter-Blox.lua",
+      "name": "Counter Blox"
+    },
+    {
+      "path": "scripts/Da-Hood.lua",
+      "name": "Da Hood"
+    },
+    {
+      "path": "scripts/Destroy-the-Cube.lua",
+      "name": "Destroy the Cube"
+    },
+    {
+      "path": "scripts/Dino-Evolution.lua",
+      "name": "Dino Evolution"
+    },
+    {
+      "path": "scripts/Dropkick-Fling.lua",
+      "name": "Dropkick Fling"
+    },
+    {
+      "path": "scripts/Dueling-Grounds.lua",
+      "name": "Dueling Grounds"
+    },
+    {
+      "path": "scripts/Eat-or-Be-Eaten.lua",
+      "name": "Eat or Be Eaten"
+    },
+    {
+      "path": "scripts/Emergency-Response-Liberty-County.lua",
+      "name": "Emergency Response: Liberty County"
+    },
+    {
+      "path": "scripts/Encounter-Smash-Battles.lua",
+      "name": "Encounter Smash Battles"
+    },
+    {
+      "path": "scripts/Fight-in-a-School.lua",
+      "name": "Fight in a School"
+    },
+    {
+      "path": "scripts/Flee-the-Facility.lua",
+      "name": "Flee the Facility"
+    },
+    {
+      "path": "scripts/FPS-Airdrop-Arena.lua",
+      "name": "FPS Airdrop Arena"
+    },
+    {
+      "path": "scripts/Global-Anarchy.lua",
+      "name": "Global Anarchy"
+    },
+    {
+      "path": "scripts/Gun-Grounds.lua",
+      "name": "Gun Grounds"
+    },
+    {
+      "path": "scripts/Harbor-Havoc.lua",
+      "name": "Harbor Havoc"
+    },
+    {
+      "path": "scripts/Hit-A-Golf-Ball-Always-Purfect.lua",
+      "name": "Hit A Golf Ball Always Purfect"
+    },
+    {
+      "path": "scripts/Hood-Customs.lua",
+      "name": "Hood Customs"
+    },
+    {
+      "path": "scripts/Hood-Rivals.lua",
+      "name": "Hood Rivals"
+    },
+    {
+      "path": "scripts/I-Hate-Brainrot.lua",
+      "name": "I Hate Brainrot"
+    },
+    {
+      "path": "scripts/I-Wanna-Test-the-Obby.lua",
+      "name": "I Wanna Test the Obby"
+    },
+    {
+      "path": "scripts/Illegal-Soccerinfinitestamina.lua",
+      "name": "Illegal Soccerinfinitestamina"
+    },
+    {
+      "path": "scripts/Item-Asylum.lua",
+      "name": "Item Asylum"
+    },
+    {
+      "path": "scripts/Kick-A-Lucky-Block-Perfectkick.lua",
+      "name": "Kick A Lucky Block Perfectkick"
+    },
+    {
+      "path": "scripts/Knife-Duels.lua",
+      "name": "Knife Duels"
+    },
+    {
+      "path": "scripts/Kohl-s-Admin-House.lua",
+      "name": "Kohl's Admin House"
+    },
+    {
+      "path": "scripts/LA-Peace-Obby.lua",
+      "name": "LA Peace Obby"
+    },
+    {
+      "path": "scripts/Life-Sentence.lua",
+      "name": "Life Sentence"
+    },
+    {
+      "path": "scripts/Murder-Mystery-2.lua",
+      "name": "Murder Mystery 2"
+    },
+    {
+      "path": "scripts/Muscle-Legends.lua",
+      "name": "Muscle Legends"
+    },
+    {
+      "path": "scripts/Nuclear-Plant.lua",
+      "name": "Nuclear Plant"
+    },
+    {
+      "path": "scripts/One-Shot.lua",
+      "name": "One Shot"
+    },
+    {
+      "path": "scripts/Open-Sea-for-Brainrots.lua",
+      "name": "Open Sea for Brainrots"
+    },
+    {
+      "path": "scripts/Operation-One.lua",
+      "name": "Operation One"
+    },
+    {
+      "path": "scripts/Pass-or-Explode.lua",
+      "name": "Pass or Explode"
+    },
+    {
+      "path": "scripts/Phonk-Slap.lua",
+      "name": "Phonk Slap"
+    },
+    {
+      "path": "scripts/Poop-a-Big-Poop.lua",
+      "name": "Poop a Big Poop"
+    },
+    {
+      "path": "scripts/Pop-a-Balloon-RNG.lua",
+      "name": "Pop a Balloon RNG"
+    },
+    {
+      "path": "scripts/Practical-Basketball.lua",
+      "name": "Practical Basketball"
+    },
+    {
+      "path": "scripts/Prison-Life.lua",
+      "name": "Prison Life"
+    },
+    {
+      "path": "scripts/Ragdoll-Blood.lua",
+      "name": "Ragdoll Blood"
+    },
+    {
+      "path": "scripts/Rocket-Rumble.lua",
+      "name": "Rocket Rumble"
+    },
+    {
+      "path": "scripts/Sky-Rivals.lua",
+      "name": "Sky Rivals"
+    },
+    {
+      "path": "scripts/Sky-Wars.lua",
+      "name": "Sky Wars"
+    },
+    {
+      "path": "scripts/Slap-Battles.lua",
+      "name": "Slap Battles"
+    },
+    {
+      "path": "scripts/Sniper-Duels.lua",
+      "name": "Sniper Duels"
+    },
+    {
+      "path": "scripts/Spelling-Bee.lua",
+      "name": "Spelling Bee"
+    },
+    {
+      "path": "scripts/Steal-An-Egg.lua",
+      "name": "Steal An Egg"
+    },
+    {
+      "path": "scripts/Strafe-FPS.lua",
+      "name": "Strafe FPS"
+    },
+    {
+      "path": "scripts/Strike-Back.lua",
+      "name": "Strike Back"
+    },
+    {
+      "path": "scripts/Sword-Fight-Reforged.lua",
+      "name": "Sword Fight Reforged"
+    },
+    {
+      "path": "scripts/Sword-Fighting-Pit.lua",
+      "name": "Sword Fighting Pit"
+    },
+    {
+      "path": "scripts/The-Bronx-3.lua",
+      "name": "The Bronx 3"
+    },
+    {
+      "path": "scripts/Top-Sniper.lua",
+      "name": "Top Sniper"
+    },
+    {
+      "path": "scripts/Typical-Colors-2.lua",
+      "name": "Typical Colors 2"
+    },
+    {
+      "path": "scripts/Volleyball-Legends.lua",
+      "name": "Volleyball Legends"
+    },
+    {
+      "path": "scripts/Wacky-Bats.lua",
+      "name": "Wacky Bats"
+    },
+    {
+      "path": "scripts/Wanted-Silentaim.lua",
+      "name": "Wanted Silentaim"
+    },
+    {
+      "path": "scripts/Weapon-Duels.lua",
+      "name": "Weapon Duels"
+    },
+    {
+      "path": "scripts/Grow-a-Beehive.lua",
+      "name": "Grow a Beehive"
+    },
+    {
+      "path": "scripts/Ride-a-Pet.lua",
+      "name": "Ride A Pet"
+    },
+    {
+      "path": "scripts/Build-A-Solar-Farm.lua",
+      "name": "Build A Solar Farm"
+    },
+    {
+      "path": "scripts/Grow-a-Garden-2.lua",
+      "name": "Grow a Garden 2"
+    },
+    {
+      "path": "scripts/Steal-a-Brainrot.lua",
+      "name": "Steal a Brainrot"
+    },
+    {
+      "path": "scripts/RIVALS.lua",
+      "name": "RIVALS"
+    },
+    {
+      "path": "scripts/100-Days-At-Sea.lua",
+      "name": "100 Days At Sea"
+    },
+    {
+      "path": "scripts/Prospecting.lua",
+      "name": "Prospecting!"
+    },
+    {
+      "path": "scripts/Survive-the-Apocalypse.lua",
+      "name": "Survive the Apocalypse"
+    },
+    {
+      "path": "scripts/Slayers-2.lua",
+      "name": "Slayers 2"
+    },
+    {
+      "path": "scripts/Jump-To-Steal-Soccer-Players.lua",
+      "name": "Jump To Steal Soccer Players"
+    },
+    {
+      "path": "scripts/Cake-Mountain.lua",
+      "name": "Cake Mountain"
+    },
+    {
+      "path": "scripts/Football-For-Brainrots.lua",
+      "name": "Football For Brainrots"
+    },
+    {
+      "path": "scripts/Tropical-Resort-Tycoon-2.lua",
+      "name": "Tropical Resort Tycoon 2"
+    },
+    {
+      "path": "scripts/Tap-4-Money.lua",
+      "name": "Tap 4 Money"
+    },
+    {
+      "path": "scripts/Build-A-Base-And-Steal.lua",
+      "name": "Build A Base And Steal"
+    },
+    {
+      "path": "scripts/Fish-For-Junk.lua",
+      "name": "Fish For Junk"
+    },
+    {
+      "path": "scripts/Roll-A-Spirit.lua",
+      "name": "Roll A Spirit"
+    },
+    {
+      "path": "scripts/Load-The-Truck.lua",
+      "name": "Load The Truck"
+    },
+    {
+      "path": "scripts/Slap-To-Survive.lua",
+      "name": "Slap To Survive"
+    },
+    {
+      "path": "scripts/Claw-Fishing.lua",
+      "name": "Claw Fishing"
+    },
+    {
+      "path": "scripts/Merge-A-Tank.lua",
+      "name": "Merge A Tank"
+    },
+    {
+      "path": "scripts/Skinny-Per-Step.lua",
+      "name": "Skinny Per Step"
+    },
+    {
+      "path": "scripts/Mutant-Plants-Base-Defense.lua",
+      "name": "Mutant Plants Base Defense"
+    },
+    {
+      "path": "scripts/Spin-A-Fem.lua",
+      "name": "Spin A Fem"
+    },
+    {
+      "path": "scripts/Survive-Zombie-Arena.lua",
+      "name": "Survive Zombie Arena"
+    },
+    {
+      "path": "scripts/Spin-A-Car.lua",
+      "name": "Spin A Car"
+    },
+    {
+      "path": "scripts/Missiles-Vs-Cities.lua",
+      "name": "Missiles Vs Cities"
+    },
+    {
+      "path": "scripts/Anime.lua",
+      "name": "Anime"
+    },
+    {
+      "path": "scripts/Poop-Per-Click.lua",
+      "name": "Poop Per Click"
+    },
+    {
+      "path": "scripts/Parkour-Pandemic.lua",
+      "name": "Parkour Pandemic"
+    },
+    {
+      "path": "scripts/Kick-Ball-To-Space.lua",
+      "name": "Kick Ball To Space"
+    },
+    {
+      "path": "scripts/My-Moo-Farm.lua",
+      "name": "My Moo Farm"
+    },
+    {
+      "path": "scripts/Break-Door.lua",
+      "name": "Break Door"
+    },
+    {
+      "path": "scripts/Build-A-Pet-Farm.lua",
+      "name": "Build A Pet Farm"
+    },
+    {
+      "path": "scripts/Merge-A-Black-Hole.lua",
+      "name": "Merge A Black Hole"
+    },
+    {
+      "path": "scripts/Hack-A-Business.lua",
+      "name": "Hack A Business"
+    },
+    {
+      "path": "scripts/Merge-Anime-Defender.lua",
+      "name": "Merge Anime Defender"
+    },
+    {
+      "path": "scripts/Cliff-Mansion-Tycoon.lua",
+      "name": "Cliff Mansion Tycoon"
+    },
+    {
+      "path": "scripts/Clean-Your-Keycaps.lua",
+      "name": "Clean Your Keycaps"
+    },
+    {
+      "path": "scripts/My-Sword-Empire.lua",
+      "name": "My Sword Empire"
+    },
+    {
+      "path": "scripts/Catch-A-Monster.lua",
+      "name": "Catch A Monster"
+    },
+    {
+      "path": "scripts/Pickaxe-Tycoon.lua",
+      "name": "Pickaxe Tycoon"
+    },
+    {
+      "path": "scripts/Merge-A-Squishy.lua",
+      "name": "Merge A Squishy"
+    },
+    {
+      "path": "scripts/Coach-A-Fighter.lua",
+      "name": "Coach A Fighter"
+    },
+    {
+      "path": "scripts/Build-A-Gun-Army.lua",
+      "name": "Build A Gun Army"
+    },
+    {
+      "path": "scripts/Bid-For-Anime.lua",
+      "name": "Bid For Anime"
+    },
+    {
+      "path": "scripts/Build-A-Slime-Defense.lua",
+      "name": "Build A Slime Defense"
+    },
+    {
+      "path": "scripts/Build-A-Zoo.lua",
+      "name": "Build A Zoo"
+    },
+    {
+      "path": "scripts/Blox-Fruits.lua",
+      "name": "Blox Fruits"
+    },
+    {
+      "path": "scripts/Search-For-The-Needle.lua",
+      "name": "Search For The Needle"
+    },
+    {
+      "path": "scripts/Swing-For-Eggs.lua",
+      "name": "Swing For Eggs"
+    },
+    {
+      "path": "scripts/Steal-From-The-Rich.lua",
+      "name": "Steal From The Rich!"
+    },
+    {
+      "path": "scripts/Huss-Valley.lua",
+      "name": "Huss Valley"
+    },
+    {
+      "path": "scripts/Fling-Things-and-People.lua",
+      "name": "Fling Things and People"
+    },
+    {
+      "path": "scripts/Death-Ball.lua",
+      "name": "Death Ball"
+    },
+    {
+      "path": "scripts/Blade-Ball.lua",
+      "name": "Blade Ball"
+    },
+    {
+      "path": "scripts/Hypershot.lua",
+      "name": "Hypershot!"
+    },
+    {
+      "path": "scripts/Cold-War.lua",
+      "name": "Cold War"
+    },
+    {
+      "path": "scripts/Grow-a-Chicken-Fighter.lua",
+      "name": "Grow a Chicken Fighter"
+    },
+    {
+      "path": "scripts/Block-Tycoon.lua",
+      "name": "Block Tycoon"
+    },
+    {
+      "path": "scripts/Ball-VS-Ball.lua",
+      "name": "Ball VS Ball"
+    },
+    {
+      "path": "scripts/Sniper-Arena.lua",
+      "name": "Sniper Arena"
+    },
+    {
+      "path": "scripts/Deadline.lua",
+      "name": "Deadline"
+    },
+    {
+      "path": "scripts/Steal-and-Escape-Police.lua",
+      "name": "Steal and Escape Police"
+    },
+    {
+      "path": "scripts/Shield-Per-Click.lua",
+      "name": "+1 Shield Per Click"
+    }
+  ],
+  "ids": {
+    "5003223": {
+      "path": "scripts/Slap-To-Survive.lua",
+      "name": "Slap To Survive"
+    },
+    "7371243": {
+      "path": "scripts/Tropical-Resort-Tycoon-2.lua",
+      "name": "Tropical Resort Tycoon 2"
+    },
+    "8444917": {
+      "path": "scripts/Merge-Anime-Defender.lua",
+      "name": "Merge Anime Defender"
+    },
+    "9190691": {
+      "path": "scripts/Anime.lua",
+      "name": "Anime"
+    },
+    "11603322": {
+      "path": "scripts/Build-A-Pet-Farm.lua",
+      "name": "Build A Pet Farm"
+    },
+    "12860813": {
+      "path": "scripts/Merge-A-Tank.lua",
+      "name": "Merge A Tank"
+    },
+    "14624718": {
+      "path": "scripts/Tap-4-Money.lua",
+      "name": "Tap 4 Money"
+    },
+    "15753989": {
+      "path": "scripts/Catch-A-Monster.lua",
+      "name": "Catch A Monster"
+    },
+    "16060315": {
+      "path": "scripts/Football-For-Brainrots.lua",
+      "name": "Football For Brainrots"
+    },
+    "32419907": {
+      "path": "scripts/Eat-or-Be-Eaten.lua",
+      "name": "Eat or Be Eaten"
+    },
+    "33017480": {
+      "path": "scripts/Anime-Dice.lua",
+      "name": "Anime Dice"
+    },
+    "33896179": {
+      "path": "scripts/Missiles-Vs-Cities.lua",
+      "name": "Missiles Vs Cities"
+    },
+    "34492682": {
+      "path": "scripts/Chicken-Farm.lua",
+      "name": "Chicken Farm"
+    },
+    "36008925": {
+      "path": "scripts/Build-A-Zoo.lua",
+      "name": "Build A Zoo"
+    },
+    "44742013": {
+      "path": "scripts/Slash-Per-Click.lua",
+      "name": "Slash Per Click"
+    },
+    "66654135": {
+      "path": "scripts/Murder-Mystery-2.lua",
+      "name": "Murder Mystery 2"
+    },
+    "103466300": {
+      "path": "scripts/Skinny-Per-Step.lua",
+      "name": "Skinny Per Step"
+    },
+    "113072261": {
+      "path": "scripts/Cut-Grass-Adventure.lua",
+      "name": "Cut Grass Adventure"
+    },
+    "124804121": {
+      "path": "scripts/Kick-Ball-To-Space.lua",
+      "name": "Kick Ball To Space"
+    },
+    "142823291": {
+      "path": "scripts/Murder-Mystery-2.lua",
+      "name": "Murder Mystery 2"
+    },
+    "144793524": {
+      "path": "scripts/Cake-Mountain.lua",
+      "name": "Cake Mountain"
+    },
+    "155615604": {
+      "path": "scripts/Prison-Life.lua",
+      "name": "Prison Life"
+    },
+    "176212969": {
+      "path": "scripts/Poop-Per-Click.lua",
+      "name": "Poop Per Click"
+    },
+    "248260079": {
+      "path": "scripts/My-Moo-Farm.lua",
+      "name": "My Moo Farm"
+    },
+    "286016413": {
+      "path": "scripts/Poor-To-Rich.lua",
+      "name": "Poor To Rich"
+    },
+    "286090429": {
+      "path": "scripts/Arsenal.lua",
+      "name": "Arsenal"
+    },
+    "287664347": {
+      "path": "scripts/Hack-A-Business.lua",
+      "name": "Hack A Business"
+    },
+    "290340269": {
+      "path": "scripts/Dino-Evolution.lua",
+      "name": "Dino Evolution"
+    },
+    "292439477": {
+      "path": "scripts/Phantom-Forces.lua",
+      "name": "Phantom Forces"
+    },
+    "301549746": {
+      "path": "scripts/Counter-Blox.lua",
+      "name": "Counter Blox"
+    },
+    "308858726": {
+      "path": "scripts/Build-A-Gun-Army.lua",
+      "name": "Build A Gun Army"
+    },
+    "328028363": {
+      "path": "scripts/Typical-Colors-2.lua",
+      "name": "Typical Colors 2"
+    },
+    "355220525": {
+      "path": "scripts/Roll-A-Spirit.lua",
+      "name": "Roll A Spirit"
+    },
+    "365646753": {
+      "path": "scripts/Parkour-Pandemic.lua",
+      "name": "Parkour Pandemic"
+    },
+    "372226183": {
+      "path": "scripts/Flee-the-Facility.lua",
+      "name": "Flee the Facility"
+    },
+    "374857141": {
+      "path": "scripts/Pickaxe-Tycoon.lua",
+      "name": "Pickaxe Tycoon"
+    },
+    "434582823": {
+      "path": "scripts/Ride-a-Pet.lua",
+      "name": "Ride A Pet"
+    },
+    "462340796": {
+      "path": "scripts/Muscle-Evolution.lua",
+      "name": "Muscle Evolution"
+    },
+    "492855504": {
+      "path": "scripts/Claw-Fishing.lua",
+      "name": "Claw Fishing"
+    },
+    "515420491": {
+      "path": "scripts/Mutant-Plants-Base-Defense.lua",
+      "name": "Mutant Plants Base Defense"
+    },
+    "540612760": {
+      "path": "scripts/Build-A-Base-And-Steal.lua",
+      "name": "Build A Base And Steal"
+    },
+    "548528838": {
+      "path": "scripts/Aura-For-Brainrots.lua",
+      "name": "Aura For Brainrots"
+    },
+    "561990553": {
+      "path": "scripts/Survive-Zombie-Arena.lua",
+      "name": "Survive Zombie Arena"
+    },
+    "592785028": {
+      "path": "scripts/Fish-For-Junk.lua",
+      "name": "Fish For Junk"
+    },
+    "611030254": {
+      "path": "scripts/Load-The-Truck.lua",
+      "name": "Load The Truck"
+    },
+    "613112271": {
+      "path": "scripts/Roll-A-Gnome.lua",
+      "name": "Roll A Gnome"
+    },
+    "622013004": {
+      "path": "scripts/Clean-Your-Keycaps.lua",
+      "name": "Clean Your Keycaps"
+    },
+    "641497291": {
+      "path": "scripts/Skinny-Per-Step.lua",
+      "name": "Skinny Per Step"
+    },
+    "706743014": {
+      "path": "scripts/My-Sword-Empire.lua",
+      "name": "My Sword Empire"
+    },
+    "744386991": {
+      "path": "scripts/Build-A-Slime-Defense.lua",
+      "name": "Build A Slime Defense"
+    },
+    "772035088": {
+      "path": "scripts/Merge-A-Squishy.lua",
+      "name": "Merge A Squishy"
+    },
+    "773411069": {
+      "path": "scripts/Clicker-Simulator.lua",
+      "name": "Clicker Simulator"
+    },
+    "786473200": {
+      "path": "scripts/Break-Door.lua",
+      "name": "Break Door"
+    },
+    "831907229": {
+      "path": "scripts/Spin-A-Car.lua",
+      "name": "Spin A Car"
+    },
+    "854390513": {
+      "path": "scripts/Jump-To-Steal-Soccer-Players.lua",
+      "name": "Jump To Steal Soccer Players"
+    },
+    "860201727": {
+      "path": "scripts/Speed-Evolve.lua",
+      "name": "Speed Evolve"
+    },
+    "878417107": {
+      "path": "scripts/Merge-A-Black-Hole.lua",
+      "name": "Merge A Black Hole"
+    },
+    "878922422": {
+      "path": "scripts/Coach-A-Fighter.lua",
+      "name": "Coach A Fighter"
+    },
+    "893973440": {
+      "path": "scripts/Flee-the-Facility.lua",
+      "name": "Flee the Facility"
+    },
+    "918026845": {
+      "path": "scripts/Sell-Ores.lua",
+      "name": "Sell Ores"
+    },
+    "994732206": {
+      "path": "scripts/Blox-Fruits.lua",
+      "name": "Blox Fruits"
+    },
+    "1000094029": {
+      "path": "scripts/Build-A-Solar-Farm.lua",
+      "name": "Build A Solar Farm"
+    },
+    "1005157018": {
+      "path": "scripts/Spin-A-Fem.lua",
+      "name": "Spin A Fem"
+    },
+    "1008902725": {
+      "path": "scripts/Speed-Monkey-Escape.lua",
+      "name": "Speed Monkey Escape"
+    },
+    "1056817463": {
+      "path": "scripts/Bid-For-Anime.lua",
+      "name": "Bid For Anime"
+    },
+    "1061245028": {
+      "path": "scripts/Cliff-Mansion-Tycoon.lua",
+      "name": "Cliff Mansion Tycoon"
+    },
+    "1622892059": {
+      "path": "scripts/Sky-Wars.lua",
+      "name": "Sky Wars"
+    },
+    "2534724415": {
+      "path": "scripts/Emergency-Response-Liberty-County.lua",
+      "name": "Emergency Response: Liberty County"
+    },
+    "2753915549": {
+      "path": "scripts/Blox-Fruits.lua",
+      "name": "Blox Fruits"
+    },
+    "2788229376": {
+      "path": "scripts/Da-Hood.lua",
+      "name": "Da Hood"
+    },
+    "3623096087": {
+      "path": "scripts/Muscle-Legends.lua",
+      "name": "Muscle Legends"
+    },
+    "3891618314": {
+      "path": "scripts/Harbor-Havoc.lua",
+      "name": "Harbor Havoc"
+    },
+    "113290951185459": {
+      "path": "scripts/Anime-Dice.lua",
+      "name": "Anime Dice"
+    },
+    "105011592530400": {
+      "path": "scripts/Build-and-Kill-Zombies.lua",
+      "name": "Build and Kill Zombies"
+    },
+    "134719268825886": {
+      "path": "scripts/Clicker-Simulator.lua",
+      "name": "Clicker Simulator"
+    },
+    "108645230905176": {
+      "path": "scripts/Mrbeast-Island-Escape.lua",
+      "name": "Mrbeast Island Escape"
+    },
+    "114507117535918": {
+      "path": "scripts/Find-the-Egg-for-a-Brainrot.lua",
+      "name": "Find the Egg for a Brainrot"
+    },
+    "96033388567901": {
+      "path": "scripts/Loot-Evo.lua",
+      "name": "Loot Evo"
+    },
+    "79268393072444": {
+      "path": "scripts/Sell-Lemons.lua",
+      "name": "Sell Lemons"
+    },
+    "122572082932179": {
+      "path": "scripts/Sell-Ores.lua",
+      "name": "Sell Ores"
+    },
+    "78177131121429": {
+      "path": "scripts/Drill-Blocks-for-Brainrots.lua",
+      "name": "Drill Blocks for Brainrots"
+    },
+    "79315121100812": {
+      "path": "scripts/Make-a-Drill-Farm.lua",
+      "name": "Make a Drill Farm"
+    },
+    "135668295983945": {
+      "path": "scripts/Skill-Point-Legends.lua",
+      "name": "Skill Point Legends"
+    },
+    "114697347887839": {
+      "path": "scripts/Speed-Monkey-Escape.lua",
+      "name": "Speed Monkey Escape"
+    },
+    "97502234572571": {
+      "path": "scripts/Speed-Monkey-Escape.lua",
+      "name": "Speed Monkey Escape"
+    },
+    "83038462357724": {
+      "path": "scripts/Dig-Clean.lua",
+      "name": "Dig & Clean"
+    },
+    "133007106457547": {
+      "path": "scripts/Muscle-Evolution.lua",
+      "name": "Muscle Evolution"
+    },
+    "74889851913797": {
+      "path": "scripts/Power-Per-Click.lua",
+      "name": "Power Per Click"
+    },
+    "103883942725157": {
+      "path": "scripts/Drain-Water-Per-Click.lua",
+      "name": "Drain Water Per Click"
+    },
+    "84332574190497": {
+      "path": "scripts/Wings-for-Brainrots.lua",
+      "name": "Wings for Brainrots"
+    },
+    "83569851223739": {
+      "path": "scripts/Speed-Evolve.lua",
+      "name": "Speed Evolve"
+    },
+    "107654875426558": {
+      "path": "scripts/Speed-Evolve.lua",
+      "name": "Speed Evolve"
+    },
+    "140128707775918": {
+      "path": "scripts/Speed-Evolve.lua",
+      "name": "Speed Evolve"
+    },
+    "140544451091543": {
+      "path": "scripts/Speed-Evolve.lua",
+      "name": "Speed Evolve"
+    },
+    "80234914611737": {
+      "path": "scripts/Jetpack-for-Brainrots.lua",
+      "name": "Jetpack for Brainrots"
+    },
+    "74193805629461": {
+      "path": "scripts/Mine-Per-Click.lua",
+      "name": "Mine Per Click"
+    },
+    "139907538117897": {
+      "path": "scripts/Ammo-Per-Click.lua",
+      "name": "Ammo Per Click"
+    },
+    "70990741130622": {
+      "path": "scripts/Aim-Per-Click.lua",
+      "name": "Aim Per Click"
+    },
+    "120766736586332": {
+      "path": "scripts/Strength-Per-Click.lua",
+      "name": "Strength Per Click"
+    },
+    "119822977170203": {
+      "path": "scripts/Power-Blast-Lucky-Blocks.lua",
+      "name": "Power Blast Lucky Blocks"
+    },
+    "102355196524321": {
+      "path": "scripts/Looks-Per-Click.lua",
+      "name": "Looks Per Click"
+    },
+    "82013336390273": {
+      "path": "scripts/Pickaxe-Simulator.lua",
+      "name": "Pickaxe Simulator"
+    },
+    "131910189515331": {
+      "path": "scripts/Spinjitsu-Escape.lua",
+      "name": "Spinjitsu Escape"
+    },
+    "112781315318195": {
+      "path": "scripts/Pull-a-Lucky-Fish.lua",
+      "name": "Pull a Lucky Fish"
+    },
+    "96003649748017": {
+      "path": "scripts/Poor-To-Rich.lua",
+      "name": "Poor To Rich"
+    },
+    "123959902101040": {
+      "path": "scripts/Logo-f-r-Brainrots.lua",
+      "name": "Logo für Brainrots"
+    },
+    "122526789002601": {
+      "path": "scripts/Aura-For-Brainrots.lua",
+      "name": "Aura For Brainrots"
+    },
+    "98001626946868": {
+      "path": "scripts/Training-To-Climb.lua",
+      "name": "Training To Climb"
+    },
+    "101836932554047": {
+      "path": "scripts/Training-To-Climb.lua",
+      "name": "Training To Climb"
+    },
+    "105553804282308": {
+      "path": "scripts/Speed-Training.lua",
+      "name": "Speed Training"
+    },
+    "117539213094671": {
+      "path": "scripts/Roll-A-Gnome.lua",
+      "name": "Roll A Gnome"
+    },
+    "125927821145949": {
+      "path": "scripts/Mine-a-Mountain.lua",
+      "name": "Mine a Mountain"
+    },
+    "76769602972434": {
+      "path": "scripts/Spin-a-Gun.lua",
+      "name": "Spin a Gun"
+    },
+    "84556640895285": {
+      "path": "scripts/Deagle-Arena.lua",
+      "name": "Deagle Arena"
+    },
+    "112087763192016": {
+      "path": "scripts/Deagle-Arena.lua",
+      "name": "Deagle Arena"
+    },
+    "97824450589417": {
+      "path": "scripts/1-Superhero-Evolution.lua",
+      "name": "1 Superhero Evolution"
+    },
+    "120189115846709": {
+      "path": "scripts/TTK-Testing.lua",
+      "name": "TTK Testing"
+    },
+    "90086669327265": {
+      "path": "scripts/Cut-Grass-Adventure.lua",
+      "name": "Cut Grass Adventure"
+    },
+    "110730550789828": {
+      "path": "scripts/Chop-Trees-for-Treasure.lua",
+      "name": "Chop Trees for Treasure"
+    },
+    "118805555015549": {
+      "path": "scripts/Loot-To-Forge.lua",
+      "name": "Loot To Forge"
+    },
+    "94987506187454": {
+      "path": "scripts/Redliner.lua",
+      "name": "Redliner"
+    },
+    "126691165749976": {
+      "path": "scripts/Redliner.lua",
+      "name": "Redliner"
+    },
+    "115875349872417": {
+      "path": "scripts/Redliner.lua",
+      "name": "Redliner"
+    },
+    "117752943664280": {
+      "path": "scripts/Roll-A-Pack.lua",
+      "name": "Roll A Pack"
+    },
+    "128683790553857": {
+      "path": "scripts/Break-an-Egg.lua",
+      "name": "Break an Egg"
+    },
+    "129216769649527": {
+      "path": "scripts/Beat-the-Anime-Boss.lua",
+      "name": "Beat the Anime Boss"
+    },
+    "126870639873289": {
+      "path": "scripts/Jump-for-Animals.lua",
+      "name": "Jump for Animals"
+    },
+    "101558013317432": {
+      "path": "scripts/Slash-Per-Click.lua",
+      "name": "Slash Per Click"
+    },
+    "10035204815": {
+      "path": "scripts/Ride-a-Pet.lua",
+      "name": "Ride A Pet"
+    },
+    "124216119978534": {
+      "path": "scripts/Ride-a-Pet.lua",
+      "name": "Ride A Pet"
+    },
+    "89790257708758": {
+      "path": "scripts/Build-A-Solar-Farm.lua",
+      "name": "Build A Solar Farm"
+    },
+    "6792057800": {
+      "path": "scripts/Airsoft-FE.lua",
+      "name": "Airsoft FE"
+    },
+    "11966456877": {
+      "path": "scripts/Answer-or-Die.lua",
+      "name": "Answer or Die"
+    },
+    "16605303570": {
+      "path": "scripts/Artemis-Royale.lua",
+      "name": "Artemis Royale"
+    },
+    "14259168147": {
+      "path": "scripts/Basketball-Legends.lua",
+      "name": "Basketball Legends"
+    },
+    "101272402522756": {
+      "path": "scripts/BBQ-Battles.lua",
+      "name": "BBQ Battles"
+    },
+    "125686182205697": {
+      "path": "scripts/Blitz-FPS.lua",
+      "name": "Blitz FPS"
+    },
+    "132768098780837": {
+      "path": "scripts/Block-Wars.lua",
+      "name": "Block Wars"
+    },
+    "13955927965": {
+      "path": "scripts/Blood-Zone.lua",
+      "name": "Blood Zone"
+    },
+    "129253568870286": {
+      "path": "scripts/Bonk-Block.lua",
+      "name": "Bonk Block"
+    },
+    "12077443856": {
+      "path": "scripts/Cali-Shootout.lua",
+      "name": "Cali Shootout"
+    },
+    "73771248610396": {
+      "path": "scripts/Cali-Streets.lua",
+      "name": "Cali Streets"
+    },
+    "137233438285284": {
+      "path": "scripts/Chicken-Farm.lua",
+      "name": "Chicken Farm"
+    },
+    "92637789841354": {
+      "path": "scripts/Clean-all-the-Leaves.lua",
+      "name": "Clean all the Leaves"
+    },
+    "103138601755519": {
+      "path": "scripts/Dino-Evolution.lua",
+      "name": "Dino Evolution"
+    },
+    "94217045453265": {
+      "path": "scripts/Dueling-Grounds.lua",
+      "name": "Dueling Grounds"
+    },
+    "112838150455902": {
+      "path": "scripts/Encounter-Smash-Battles.lua",
+      "name": "Encounter Smash Battles"
+    },
+    "17698425045": {
+      "path": "scripts/Fight-in-a-School.lua",
+      "name": "Fight in a School"
+    },
+    "93091759101123": {
+      "path": "scripts/FPS-Airdrop-Arena.lua",
+      "name": "FPS Airdrop Arena"
+    },
+    "132640332499066": {
+      "path": "scripts/Global-Anarchy.lua",
+      "name": "Global Anarchy"
+    },
+    "12137249458": {
+      "path": "scripts/Gun-Grounds.lua",
+      "name": "Gun Grounds"
+    },
+    "138363592957250": {
+      "path": "scripts/Hit-A-Golf-Ball-Always-Purfect.lua",
+      "name": "Hit A Golf Ball Always Purfect"
+    },
+    "9825515356": {
+      "path": "scripts/Hood-Customs.lua",
+      "name": "Hood Customs"
+    },
+    "77463332823746": {
+      "path": "scripts/Hood-Rivals.lua",
+      "name": "Hood Rivals"
+    },
+    "119405710070223": {
+      "path": "scripts/I-Hate-Brainrot.lua",
+      "name": "I Hate Brainrot"
+    },
+    "11684369582": {
+      "path": "scripts/I-Wanna-Test-the-Obby.lua",
+      "name": "I Wanna Test the Obby"
+    },
+    "126987974021910": {
+      "path": "scripts/Illegal-Soccerinfinitestamina.lua",
+      "name": "Illegal Soccerinfinitestamina"
+    },
+    "5670218884": {
+      "path": "scripts/Item-Asylum.lua",
+      "name": "Item Asylum"
+    },
+    "123088439475472": {
+      "path": "scripts/Kick-A-Lucky-Block-Perfectkick.lua",
+      "name": "Kick A Lucky Block Perfectkick"
+    },
+    "79877593860968": {
+      "path": "scripts/Knife-Duels.lua",
+      "name": "Knife Duels"
+    },
+    "4657574717": {
+      "path": "scripts/Kohl-s-Admin-House.lua",
+      "name": "Kohl's Admin House"
+    },
+    "127608230264974": {
+      "path": "scripts/LA-Peace-Obby.lua",
+      "name": "LA Peace Obby"
+    },
+    "13083893317": {
+      "path": "scripts/Life-Sentence.lua",
+      "name": "Life Sentence"
+    },
+    "98626216952426": {
+      "path": "scripts/Nuclear-Plant.lua",
+      "name": "Nuclear Plant"
+    },
+    "111600158364583": {
+      "path": "scripts/One-Shot.lua",
+      "name": "One Shot"
+    },
+    "114349086251135": {
+      "path": "scripts/Open-Sea-for-Brainrots.lua",
+      "name": "Open Sea for Brainrots"
+    },
+    "72920620366355": {
+      "path": "scripts/Operation-One.lua",
+      "name": "Operation One"
+    },
+    "134424372433341": {
+      "path": "scripts/Pass-or-Explode.lua",
+      "name": "Pass or Explode"
+    },
+    "100911362514791": {
+      "path": "scripts/Phonk-Slap.lua",
+      "name": "Phonk Slap"
+    },
+    "85050171250159": {
+      "path": "scripts/Poop-a-Big-Poop.lua",
+      "name": "Poop a Big Poop"
+    },
+    "108098130071760": {
+      "path": "scripts/Pop-a-Balloon-RNG.lua",
+      "name": "Pop a Balloon RNG"
+    },
+    "131865328142040": {
+      "path": "scripts/Practical-Basketball.lua",
+      "name": "Practical Basketball"
+    },
+    "124100414847272": {
+      "path": "scripts/Ragdoll-Blood.lua",
+      "name": "Ragdoll Blood"
+    },
+    "89704645856683": {
+      "path": "scripts/Rocket-Rumble.lua",
+      "name": "Rocket Rumble"
+    },
+    "16735970772": {
+      "path": "scripts/Sky-Rivals.lua",
+      "name": "Sky Rivals"
+    },
+    "6403373529": {
+      "path": "scripts/Slap-Battles.lua",
+      "name": "Slap Battles"
+    },
+    "109397169461300": {
+      "path": "scripts/Sniper-Duels.lua",
+      "name": "Sniper Duels"
+    },
+    "17590362521": {
+      "path": "scripts/Spelling-Bee.lua",
+      "name": "Spelling Bee"
+    },
+    "107778070777162": {
+      "path": "scripts/Steal-An-Egg.lua",
+      "name": "Steal An Egg"
+    },
+    "109020905733214": {
+      "path": "scripts/Strafe-FPS.lua",
+      "name": "Strafe FPS"
+    },
+    "124143542106350": {
+      "path": "scripts/Strike-Back.lua",
+      "name": "Strike Back"
+    },
+    "119265221596002": {
+      "path": "scripts/Sword-Fighting-Pit.lua",
+      "name": "Sword Fighting Pit"
+    },
+    "119214646022567": {
+      "path": "scripts/Top-Sniper.lua",
+      "name": "Top Sniper"
+    },
+    "73956553001240": {
+      "path": "scripts/Volleyball-Legends.lua",
+      "name": "Volleyball Legends"
+    },
+    "81643479144713": {
+      "path": "scripts/Wacky-Bats.lua",
+      "name": "Wacky Bats"
+    },
+    "82983707799188": {
+      "path": "scripts/Weapon-Duels.lua",
+      "name": "Weapon Duels"
+    },
+    "88891488197895": {
+      "path": "scripts/Grow-a-Beehive.lua",
+      "name": "Grow a Beehive"
+    },
+    "97598239454123": {
+      "path": "scripts/Grow-a-Garden-2.lua",
+      "name": "Grow a Garden 2"
+    },
+    "109983668079237": {
+      "path": "scripts/Steal-a-Brainrot.lua",
+      "name": "Steal a Brainrot"
+    },
+    "17625359962": {
+      "path": "scripts/RIVALS.lua",
+      "name": "RIVALS"
+    },
+    "70411440483149": {
+      "path": "scripts/100-Days-At-Sea.lua",
+      "name": "100 Days At Sea"
+    },
+    "9167377564": {
+      "path": "scripts/100-Days-At-Sea.lua",
+      "name": "100 Days At Sea"
+    },
+    "117623186846996": {
+      "path": "scripts/Prospecting.lua",
+      "name": "Prospecting!"
+    },
+    "116139828947259": {
+      "path": "scripts/Survive-the-Apocalypse.lua",
+      "name": "Survive the Apocalypse"
+    },
+    "90148635862803": {
+      "path": "scripts/Survive-the-Apocalypse.lua",
+      "name": "Survive the Apocalypse"
+    },
+    "16205713724": {
+      "path": "scripts/Slayers-2.lua",
+      "name": "Slayers 2"
+    },
+    "5595353122": {
+      "path": "scripts/Slayers-2.lua",
+      "name": "Slayers 2"
+    },
+    "136406881576517": {
+      "path": "scripts/Slayers-2.lua",
+      "name": "Slayers 2"
+    },
+    "75556147183481": {
+      "path": "scripts/Slayers-2.lua",
+      "name": "Slayers 2"
+    },
+    "129827112113663": {
+      "path": "scripts/Prospecting.lua",
+      "name": "Prospecting!"
+    },
+    "7629331599": {
+      "path": "scripts/Prospecting.lua",
+      "name": "Prospecting!"
+    },
+    "17047024836": {
+      "path": "scripts/Slayers-2.lua",
+      "name": "Slayers 2"
+    },
+    "109676363279588": {
+      "path": "scripts/Slayers-2.lua",
+      "name": "Slayers 2"
+    },
+    "100753254401525": {
+      "path": "scripts/1-Damage-FPS.lua",
+      "name": "1 Damage FPS"
+    },
+    "14438406081": {
+      "path": "scripts/Wanted-Silentaim.lua",
+      "name": "Wanted Silentaim"
+    },
+    "4442272183": {
+      "path": "scripts/Blox-Fruits.lua",
+      "name": "Blox Fruits"
+    },
+    "7449423635": {
+      "path": "scripts/Blox-Fruits.lua",
+      "name": "Blox Fruits"
+    },
+    "77108422251420": {
+      "path": "scripts/Search-For-The-Needle.lua",
+      "name": "Search For The Needle"
+    },
+    "108628039999641": {
+      "path": "scripts/Search-For-The-Needle.lua",
+      "name": "Search For The Needle"
+    },
+    "83445806734780": {
+      "path": "scripts/Search-For-The-Needle.lua",
+      "name": "Search For The Needle"
+    },
+    "109203247742910": {
+      "path": "scripts/Swing-For-Eggs.lua",
+      "name": "Swing For Eggs"
+    },
+    "120475074479690": {
+      "path": "scripts/Steal-From-The-Rich.lua",
+      "name": "Steal From The Rich!"
+    },
+    "6961824067": {
+      "path": "scripts/Fling-Things-and-People.lua",
+      "name": "Fling Things and People"
+    },
+    "15002061926": {
+      "path": "scripts/Death-Ball.lua",
+      "name": "Death Ball"
+    },
+    "13772394625": {
+      "path": "scripts/Blade-Ball.lua",
+      "name": "Blade Ball"
+    },
+    "87274635966213": {
+      "path": "scripts/Bid-For-Anime.lua",
+      "name": "Bid For Anime"
+    },
+    "10448083800": {
+      "path": "scripts/Bid-For-Anime.lua",
+      "name": "Bid For Anime"
+    },
+    "10464566605": {
+      "path": "scripts/Blitz-FPS.lua",
+      "name": "Blitz FPS"
+    },
+    "10060242820": {
+      "path": "scripts/Bonk-Block.lua",
+      "name": "Bonk Block"
+    },
+    "10378885079": {
+      "path": "scripts/Block-Wars.lua",
+      "name": "Block Wars"
+    },
+    "109665604071009": {
+      "path": "scripts/Break-an-Egg.lua",
+      "name": "Break an Egg"
+    },
+    "10765702906": {
+      "path": "scripts/Break-an-Egg.lua",
+      "name": "Break an Egg"
+    },
+    "119004860768199": {
+      "path": "scripts/Break-Door.lua",
+      "name": "Break Door"
+    },
+    "9788139379": {
+      "path": "scripts/Break-Door.lua",
+      "name": "Break Door"
+    },
+    "132016691802922": {
+      "path": "scripts/Build-A-Base-And-Steal.lua",
+      "name": "Build a Base and Steal"
+    },
+    "82441325527385": {
+      "path": "scripts/Build-A-Base-And-Steal.lua",
+      "name": "Build a Base and Steal"
+    },
+    "77458130464788": {
+      "path": "scripts/Build-A-Base-And-Steal.lua",
+      "name": "Build a Base and Steal"
+    },
+    "6035872082": {
+      "path": "scripts/RIVALS.lua",
+      "name": "RIVALS"
+    },
+    "17516596118": {
+      "path": "scripts/Hypershot.lua",
+      "name": "Hypershot!"
+    },
+    "131008473296170": {
+      "path": "scripts/Hypershot.lua",
+      "name": "Hypershot!"
+    },
+    "122181485177067": {
+      "path": "scripts/Hypershot.lua",
+      "name": "Hypershot!"
+    },
+    "100040622766961": {
+      "path": "scripts/Hypershot.lua",
+      "name": "Hypershot!"
+    },
+    "108428559529058": {
+      "path": "scripts/Hypershot.lua",
+      "name": "Hypershot!"
+    },
+    "86696142930150": {
+      "path": "scripts/Hypershot.lua",
+      "name": "Hypershot!"
+    },
+    "103420430505525": {
+      "path": "scripts/Hypershot.lua",
+      "name": "Hypershot!"
+    },
+    "134474332601640": {
+      "path": "scripts/Hypershot.lua",
+      "name": "Hypershot!"
+    },
+    "92980558919575": {
+      "path": "scripts/Hypershot.lua",
+      "name": "Hypershot!"
+    },
+    "13687899540": {
+      "path": "scripts/Cold-War.lua",
+      "name": "Cold War"
+    },
+    "94640181989498": {
+      "path": "scripts/Grow-a-Chicken-Fighter.lua",
+      "name": "Grow a Chicken Fighter"
+    },
+    "8317588085": {
+      "path": "scripts/Block-Tycoon.lua",
+      "name": "Block Tycoon"
+    },
+    "96510596525082": {
+      "path": "scripts/Ball-VS-Ball.lua",
+      "name": "Ball VS Ball"
+    },
+    "122446657157717": {
+      "path": "scripts/Sniper-Arena.lua",
+      "name": "Sniper Arena"
+    },
+    "107535308163741": {
+      "path": "scripts/Huss-Valley.lua",
+      "name": "Huss Valley"
+    },
+    "10764627709": {
+      "path": "scripts/Huss-Valley.lua",
+      "name": "Huss Valley"
+    },
+    "12144402492": {
+      "path": "scripts/Deadline.lua",
+      "name": "Deadline"
+    },
+    "85211729168715": {
+      "path": "scripts/Blox-Fruits.lua",
+      "name": "Blox Fruits"
+    },
+    "79091703265657": {
+      "path": "scripts/Blox-Fruits.lua",
+      "name": "Blox Fruits"
+    },
+    "100117331123089": {
+      "path": "scripts/Blox-Fruits.lua",
+      "name": "Blox Fruits"
+    },
+    "10753751277": {
+      "path": "scripts/Steal-From-The-Rich.lua",
+      "name": "Steal From The Rich"
+    },
+    "75561437976025": {
+      "path": "scripts/Steal-and-Escape-Police.lua",
+      "name": "Steal and Escape Police"
+    },
+    "10763683470": {
+      "path": "scripts/Shield-Per-Click.lua",
+      "name": "+1 Shield Per Click"
+    },
+    "83283886932197": {
+      "path": "scripts/Shield-Per-Click.lua",
+      "name": "+1 Shield Per Click"
+    },
+    "7395930870": {
+      "path": "scripts/Sell-Lemons.lua",
+      "name": "Sell Lemons"
+    }
+  },
+  "names": {
+    "universal": {
+      "path": "scripts/Universal.lua",
+      "name": "Universal"
+    },
+    "anime dice": {
+      "path": "scripts/Anime-Dice.lua",
+      "name": "Anime Dice"
+    },
+    "build and kill zombies": {
+      "path": "scripts/Build-and-Kill-Zombies.lua",
+      "name": "Build and Kill Zombies"
+    },
+    "clicker simulator": {
+      "path": "scripts/Clicker-Simulator.lua",
+      "name": "Clicker Simulator"
+    },
+    "phantom forces": {
+      "path": "scripts/Phantom-Forces.lua",
+      "name": "Phantom Forces"
+    },
+    "mrbeast island escape": {
+      "path": "scripts/Mrbeast-Island-Escape.lua",
+      "name": "Mrbeast Island Escape"
+    },
+    "find the egg for a brainrot": {
+      "path": "scripts/Find-the-Egg-for-a-Brainrot.lua",
+      "name": "Find the Egg for a Brainrot"
+    },
+    "loot evo": {
+      "path": "scripts/Loot-Evo.lua",
+      "name": "Loot Evo"
+    },
+    "sell lemons": {
+      "path": "scripts/Sell-Lemons.lua",
+      "name": "Sell Lemons"
+    },
+    "sell ores": {
+      "path": "scripts/Sell-Ores.lua",
+      "name": "Sell Ores"
+    },
+    "drill blocks for brainrots": {
+      "path": "scripts/Drill-Blocks-for-Brainrots.lua",
+      "name": "Drill Blocks for Brainrots"
+    },
+    "make a drill farm": {
+      "path": "scripts/Make-a-Drill-Farm.lua",
+      "name": "Make a Drill Farm"
+    },
+    "skill point legends": {
+      "path": "scripts/Skill-Point-Legends.lua",
+      "name": "Skill Point Legends"
+    },
+    "speed monkey escape": {
+      "path": "scripts/Speed-Monkey-Escape.lua",
+      "name": "Speed Monkey Escape"
+    },
+    "dig clean": {
+      "path": "scripts/Dig-Clean.lua",
+      "name": "Dig & Clean"
+    },
+    "muscle evolution": {
+      "path": "scripts/Muscle-Evolution.lua",
+      "name": "Muscle Evolution"
+    },
+    "power per click": {
+      "path": "scripts/Power-Per-Click.lua",
+      "name": "Power Per Click"
+    },
+    "drain water per click": {
+      "path": "scripts/Drain-Water-Per-Click.lua",
+      "name": "Drain Water Per Click"
+    },
+    "wings for brainrots": {
+      "path": "scripts/Wings-for-Brainrots.lua",
+      "name": "Wings for Brainrots"
+    },
+    "speed evolve": {
+      "path": "scripts/Speed-Evolve.lua",
+      "name": "Speed Evolve"
+    },
+    "jetpack for brainrots": {
+      "path": "scripts/Jetpack-for-Brainrots.lua",
+      "name": "Jetpack for Brainrots"
+    },
+    "mine per click": {
+      "path": "scripts/Mine-Per-Click.lua",
+      "name": "Mine Per Click"
+    },
+    "ammo per click": {
+      "path": "scripts/Ammo-Per-Click.lua",
+      "name": "Ammo Per Click"
+    },
+    "aim per click": {
+      "path": "scripts/Aim-Per-Click.lua",
+      "name": "Aim Per Click"
+    },
+    "strength per click": {
+      "path": "scripts/Strength-Per-Click.lua",
+      "name": "Strength Per Click"
+    },
+    "power blast lucky blocks": {
+      "path": "scripts/Power-Blast-Lucky-Blocks.lua",
+      "name": "Power Blast Lucky Blocks"
+    },
+    "looks per click": {
+      "path": "scripts/Looks-Per-Click.lua",
+      "name": "Looks Per Click"
+    },
+    "pickaxe simulator": {
+      "path": "scripts/Pickaxe-Simulator.lua",
+      "name": "Pickaxe Simulator"
+    },
+    "spinjitsu escape": {
+      "path": "scripts/Spinjitsu-Escape.lua",
+      "name": "Spinjitsu Escape"
+    },
+    "pull a lucky fish": {
+      "path": "scripts/Pull-a-Lucky-Fish.lua",
+      "name": "Pull a Lucky Fish"
+    },
+    "poor to rich": {
+      "path": "scripts/Poor-To-Rich.lua",
+      "name": "Poor To Rich"
+    },
+    "logo f r brainrots": {
+      "path": "scripts/Logo-f-r-Brainrots.lua",
+      "name": "Logo für Brainrots"
+    },
+    "aura for brainrots": {
+      "path": "scripts/Aura-For-Brainrots.lua",
+      "name": "Aura For Brainrots"
+    },
+    "training to climb": {
+      "path": "scripts/Training-To-Climb.lua",
+      "name": "Training To Climb"
+    },
+    "speed training": {
+      "path": "scripts/Speed-Training.lua",
+      "name": "Speed Training"
+    },
+    "roll a gnome": {
+      "path": "scripts/Roll-A-Gnome.lua",
+      "name": "Roll A Gnome"
+    },
+    "arsenal": {
+      "path": "scripts/Arsenal.lua",
+      "name": "Arsenal"
+    },
+    "mine a mountain": {
+      "path": "scripts/Mine-a-Mountain.lua",
+      "name": "Mine a Mountain"
+    },
+    "spin a gun": {
+      "path": "scripts/Spin-a-Gun.lua",
+      "name": "Spin a Gun"
+    },
+    "deagle arena": {
+      "path": "scripts/Deagle-Arena.lua",
+      "name": "Deagle Arena"
+    },
+    "1 superhero evolution": {
+      "path": "scripts/1-Superhero-Evolution.lua",
+      "name": "1 Superhero Evolution"
+    },
+    "ttk testing": {
+      "path": "scripts/TTK-Testing.lua",
+      "name": "TTK Testing"
+    },
+    "cut grass adventure": {
+      "path": "scripts/Cut-Grass-Adventure.lua",
+      "name": "Cut Grass Adventure"
+    },
+    "chop trees for treasure": {
+      "path": "scripts/Chop-Trees-for-Treasure.lua",
+      "name": "Chop Trees for Treasure"
+    },
+    "loot to forge": {
+      "path": "scripts/Loot-To-Forge.lua",
+      "name": "Loot To Forge"
+    },
+    "redliner": {
+      "path": "scripts/Redliner.lua",
+      "name": "Redliner"
+    },
+    "roll a pack": {
+      "path": "scripts/Roll-A-Pack.lua",
+      "name": "Roll A Pack"
+    },
+    "break an egg": {
+      "path": "scripts/Break-an-Egg.lua",
+      "name": "Break an Egg"
+    },
+    "beat the anime boss": {
+      "path": "scripts/Beat-the-Anime-Boss.lua",
+      "name": "Beat the Anime Boss"
+    },
+    "jump for animals": {
+      "path": "scripts/Jump-for-Animals.lua",
+      "name": "Jump for Animals"
+    },
+    "slash per click": {
+      "path": "scripts/Slash-Per-Click.lua",
+      "name": "Slash Per Click"
+    },
+    "1 damage fps": {
+      "path": "scripts/1-Damage-FPS.lua",
+      "name": "1 Damage FPS"
+    },
+    "airsoft fe": {
+      "path": "scripts/Airsoft-FE.lua",
+      "name": "Airsoft FE"
+    },
+    "answer or die": {
+      "path": "scripts/Answer-or-Die.lua",
+      "name": "Answer or Die"
+    },
+    "artemis royale": {
+      "path": "scripts/Artemis-Royale.lua",
+      "name": "Artemis Royale"
+    },
+    "basketball legends": {
+      "path": "scripts/Basketball-Legends.lua",
+      "name": "Basketball Legends"
+    },
+    "bbq battles": {
+      "path": "scripts/BBQ-Battles.lua",
+      "name": "BBQ Battles"
+    },
+    "blitz fps": {
+      "path": "scripts/Blitz-FPS.lua",
+      "name": "Blitz FPS"
+    },
+    "block wars": {
+      "path": "scripts/Block-Wars.lua",
+      "name": "Block Wars"
+    },
+    "blood zone": {
+      "path": "scripts/Blood-Zone.lua",
+      "name": "Blood Zone"
+    },
+    "bonk block": {
+      "path": "scripts/Bonk-Block.lua",
+      "name": "Bonk Block"
+    },
+    "cali shootout": {
+      "path": "scripts/Cali-Shootout.lua",
+      "name": "Cali Shootout"
+    },
+    "cali streets": {
+      "path": "scripts/Cali-Streets.lua",
+      "name": "Cali Streets"
+    },
+    "chicken farm": {
+      "path": "scripts/Chicken-Farm.lua",
+      "name": "Chicken Farm"
+    },
+    "clean all the leaves": {
+      "path": "scripts/Clean-all-the-Leaves.lua",
+      "name": "Clean all the Leaves"
+    },
+    "counter blox": {
+      "path": "scripts/Counter-Blox.lua",
+      "name": "Counter Blox"
+    },
+    "da hood": {
+      "path": "scripts/Da-Hood.lua",
+      "name": "Da Hood"
+    },
+    "destroy the cube": {
+      "path": "scripts/Destroy-the-Cube.lua",
+      "name": "Destroy the Cube"
+    },
+    "dino evolution": {
+      "path": "scripts/Dino-Evolution.lua",
+      "name": "Dino Evolution"
+    },
+    "dropkick fling": {
+      "path": "scripts/Dropkick-Fling.lua",
+      "name": "Dropkick Fling"
+    },
+    "dueling grounds": {
+      "path": "scripts/Dueling-Grounds.lua",
+      "name": "Dueling Grounds"
+    },
+    "eat or be eaten": {
+      "path": "scripts/Eat-or-Be-Eaten.lua",
+      "name": "Eat or Be Eaten"
+    },
+    "emergency response liberty county": {
+      "path": "scripts/Emergency-Response-Liberty-County.lua",
+      "name": "Emergency Response: Liberty County"
+    },
+    "encounter smash battles": {
+      "path": "scripts/Encounter-Smash-Battles.lua",
+      "name": "Encounter Smash Battles"
+    },
+    "fight in a school": {
+      "path": "scripts/Fight-in-a-School.lua",
+      "name": "Fight in a School"
+    },
+    "flee the facility": {
+      "path": "scripts/Flee-the-Facility.lua",
+      "name": "Flee the Facility"
+    },
+    "fps airdrop arena": {
+      "path": "scripts/FPS-Airdrop-Arena.lua",
+      "name": "FPS Airdrop Arena"
+    },
+    "global anarchy": {
+      "path": "scripts/Global-Anarchy.lua",
+      "name": "Global Anarchy"
+    },
+    "gun grounds": {
+      "path": "scripts/Gun-Grounds.lua",
+      "name": "Gun Grounds"
+    },
+    "harbor havoc": {
+      "path": "scripts/Harbor-Havoc.lua",
+      "name": "Harbor Havoc"
+    },
+    "hit a golf ball always purfect": {
+      "path": "scripts/Hit-A-Golf-Ball-Always-Purfect.lua",
+      "name": "Hit A Golf Ball Always Purfect"
+    },
+    "hood customs": {
+      "path": "scripts/Hood-Customs.lua",
+      "name": "Hood Customs"
+    },
+    "hood rivals": {
+      "path": "scripts/Hood-Rivals.lua",
+      "name": "Hood Rivals"
+    },
+    "i hate brainrot": {
+      "path": "scripts/I-Hate-Brainrot.lua",
+      "name": "I Hate Brainrot"
+    },
+    "i wanna test the obby": {
+      "path": "scripts/I-Wanna-Test-the-Obby.lua",
+      "name": "I Wanna Test the Obby"
+    },
+    "illegal soccerinfinitestamina": {
+      "path": "scripts/Illegal-Soccerinfinitestamina.lua",
+      "name": "Illegal Soccerinfinitestamina"
+    },
+    "item asylum": {
+      "path": "scripts/Item-Asylum.lua",
+      "name": "Item Asylum"
+    },
+    "kick a lucky block perfectkick": {
+      "path": "scripts/Kick-A-Lucky-Block-Perfectkick.lua",
+      "name": "Kick A Lucky Block Perfectkick"
+    },
+    "knife duels": {
+      "path": "scripts/Knife-Duels.lua",
+      "name": "Knife Duels"
+    },
+    "kohl s admin house": {
+      "path": "scripts/Kohl-s-Admin-House.lua",
+      "name": "Kohl's Admin House"
+    },
+    "la peace obby": {
+      "path": "scripts/LA-Peace-Obby.lua",
+      "name": "LA Peace Obby"
+    },
+    "life sentence": {
+      "path": "scripts/Life-Sentence.lua",
+      "name": "Life Sentence"
+    },
+    "murder mystery 2": {
+      "path": "scripts/Murder-Mystery-2.lua",
+      "name": "Murder Mystery 2"
+    },
+    "muscle legends": {
+      "path": "scripts/Muscle-Legends.lua",
+      "name": "Muscle Legends"
+    },
+    "nuclear plant": {
+      "path": "scripts/Nuclear-Plant.lua",
+      "name": "Nuclear Plant"
+    },
+    "one shot": {
+      "path": "scripts/One-Shot.lua",
+      "name": "One Shot"
+    },
+    "open sea for brainrots": {
+      "path": "scripts/Open-Sea-for-Brainrots.lua",
+      "name": "Open Sea for Brainrots"
+    },
+    "operation one": {
+      "path": "scripts/Operation-One.lua",
+      "name": "Operation One"
+    },
+    "pass or explode": {
+      "path": "scripts/Pass-or-Explode.lua",
+      "name": "Pass or Explode"
+    },
+    "phonk slap": {
+      "path": "scripts/Phonk-Slap.lua",
+      "name": "Phonk Slap"
+    },
+    "poop a big poop": {
+      "path": "scripts/Poop-a-Big-Poop.lua",
+      "name": "Poop a Big Poop"
+    },
+    "pop a balloon rng": {
+      "path": "scripts/Pop-a-Balloon-RNG.lua",
+      "name": "Pop a Balloon RNG"
+    },
+    "practical basketball": {
+      "path": "scripts/Practical-Basketball.lua",
+      "name": "Practical Basketball"
+    },
+    "prison life": {
+      "path": "scripts/Prison-Life.lua",
+      "name": "Prison Life"
+    },
+    "ragdoll blood": {
+      "path": "scripts/Ragdoll-Blood.lua",
+      "name": "Ragdoll Blood"
+    },
+    "rocket rumble": {
+      "path": "scripts/Rocket-Rumble.lua",
+      "name": "Rocket Rumble"
+    },
+    "sky rivals": {
+      "path": "scripts/Sky-Rivals.lua",
+      "name": "Sky Rivals"
+    },
+    "sky wars": {
+      "path": "scripts/Sky-Wars.lua",
+      "name": "Sky Wars"
+    },
+    "slap battles": {
+      "path": "scripts/Slap-Battles.lua",
+      "name": "Slap Battles"
+    },
+    "sniper duels": {
+      "path": "scripts/Sniper-Duels.lua",
+      "name": "Sniper Duels"
+    },
+    "spelling bee": {
+      "path": "scripts/Spelling-Bee.lua",
+      "name": "Spelling Bee"
+    },
+    "steal an egg": {
+      "path": "scripts/Steal-An-Egg.lua",
+      "name": "Steal An Egg"
+    },
+    "strafe fps": {
+      "path": "scripts/Strafe-FPS.lua",
+      "name": "Strafe FPS"
+    },
+    "strike back": {
+      "path": "scripts/Strike-Back.lua",
+      "name": "Strike Back"
+    },
+    "sword fight reforged": {
+      "path": "scripts/Sword-Fight-Reforged.lua",
+      "name": "Sword Fight Reforged"
+    },
+    "sword fighting pit": {
+      "path": "scripts/Sword-Fighting-Pit.lua",
+      "name": "Sword Fighting Pit"
+    },
+    "the bronx 3": {
+      "path": "scripts/The-Bronx-3.lua",
+      "name": "The Bronx 3"
+    },
+    "top sniper": {
+      "path": "scripts/Top-Sniper.lua",
+      "name": "Top Sniper"
+    },
+    "typical colors 2": {
+      "path": "scripts/Typical-Colors-2.lua",
+      "name": "Typical Colors 2"
+    },
+    "volleyball legends": {
+      "path": "scripts/Volleyball-Legends.lua",
+      "name": "Volleyball Legends"
+    },
+    "wacky bats": {
+      "path": "scripts/Wacky-Bats.lua",
+      "name": "Wacky Bats"
+    },
+    "wanted silentaim": {
+      "path": "scripts/Wanted-Silentaim.lua",
+      "name": "Wanted Silentaim"
+    },
+    "weapon duels": {
+      "path": "scripts/Weapon-Duels.lua",
+      "name": "Weapon Duels"
+    },
+    "grow a beehive": {
+      "path": "scripts/Grow-a-Beehive.lua",
+      "name": "Grow a Beehive"
+    },
+    "ride a pet": {
+      "path": "scripts/Ride-a-Pet.lua",
+      "name": "Ride A Pet"
+    },
+    "build a solar farm": {
+      "path": "scripts/Build-A-Solar-Farm.lua",
+      "name": "Build A Solar Farm"
+    },
+    "grow a garden 2": {
+      "path": "scripts/Grow-a-Garden-2.lua",
+      "name": "Grow a Garden 2"
+    },
+    "steal a brainrot": {
+      "path": "scripts/Steal-a-Brainrot.lua",
+      "name": "Steal a Brainrot"
+    },
+    "rivals": {
+      "path": "scripts/RIVALS.lua",
+      "name": "RIVALS"
+    },
+    "100 days at sea": {
+      "path": "scripts/100-Days-At-Sea.lua",
+      "name": "100 Days At Sea"
+    },
+    "prospecting": {
+      "path": "scripts/Prospecting.lua",
+      "name": "Prospecting!"
+    },
+    "survive the apocalypse": {
+      "path": "scripts/Survive-the-Apocalypse.lua",
+      "name": "Survive the Apocalypse"
+    },
+    "slayers 2": {
+      "path": "scripts/Slayers-2.lua",
+      "name": "Slayers 2"
+    },
+    "jump to steal soccer players": {
+      "path": "scripts/Jump-To-Steal-Soccer-Players.lua",
+      "name": "Jump To Steal Soccer Players"
+    },
+    "cake mountain": {
+      "path": "scripts/Cake-Mountain.lua",
+      "name": "Cake Mountain"
+    },
+    "football for brainrots": {
+      "path": "scripts/Football-For-Brainrots.lua",
+      "name": "Football For Brainrots"
+    },
+    "tropical resort tycoon 2": {
+      "path": "scripts/Tropical-Resort-Tycoon-2.lua",
+      "name": "Tropical Resort Tycoon 2"
+    },
+    "tap 4 money": {
+      "path": "scripts/Tap-4-Money.lua",
+      "name": "Tap 4 Money"
+    },
+    "build a base and steal": {
+      "path": "scripts/Build-A-Base-And-Steal.lua",
+      "name": "Build a Base and Steal"
+    },
+    "fish for junk": {
+      "path": "scripts/Fish-For-Junk.lua",
+      "name": "Fish For Junk"
+    },
+    "roll a spirit": {
+      "path": "scripts/Roll-A-Spirit.lua",
+      "name": "Roll A Spirit"
+    },
+    "load the truck": {
+      "path": "scripts/Load-The-Truck.lua",
+      "name": "Load The Truck"
+    },
+    "slap to survive": {
+      "path": "scripts/Slap-To-Survive.lua",
+      "name": "Slap To Survive"
+    },
+    "claw fishing": {
+      "path": "scripts/Claw-Fishing.lua",
+      "name": "Claw Fishing"
+    },
+    "merge a tank": {
+      "path": "scripts/Merge-A-Tank.lua",
+      "name": "Merge A Tank"
+    },
+    "skinny per step": {
+      "path": "scripts/Skinny-Per-Step.lua",
+      "name": "Skinny Per Step"
+    },
+    "mutant plants base defense": {
+      "path": "scripts/Mutant-Plants-Base-Defense.lua",
+      "name": "Mutant Plants Base Defense"
+    },
+    "spin a fem": {
+      "path": "scripts/Spin-A-Fem.lua",
+      "name": "Spin A Fem"
+    },
+    "survive zombie arena": {
+      "path": "scripts/Survive-Zombie-Arena.lua",
+      "name": "Survive Zombie Arena"
+    },
+    "spin a car": {
+      "path": "scripts/Spin-A-Car.lua",
+      "name": "Spin A Car"
+    },
+    "missiles vs cities": {
+      "path": "scripts/Missiles-Vs-Cities.lua",
+      "name": "Missiles Vs Cities"
+    },
+    "anime": {
+      "path": "scripts/Anime.lua",
+      "name": "Anime"
+    },
+    "poop per click": {
+      "path": "scripts/Poop-Per-Click.lua",
+      "name": "Poop Per Click"
+    },
+    "parkour pandemic": {
+      "path": "scripts/Parkour-Pandemic.lua",
+      "name": "Parkour Pandemic"
+    },
+    "kick ball to space": {
+      "path": "scripts/Kick-Ball-To-Space.lua",
+      "name": "Kick Ball To Space"
+    },
+    "my moo farm": {
+      "path": "scripts/My-Moo-Farm.lua",
+      "name": "My Moo Farm"
+    },
+    "break door": {
+      "path": "scripts/Break-Door.lua",
+      "name": "Break Door"
+    },
+    "build a pet farm": {
+      "path": "scripts/Build-A-Pet-Farm.lua",
+      "name": "Build A Pet Farm"
+    },
+    "merge a black hole": {
+      "path": "scripts/Merge-A-Black-Hole.lua",
+      "name": "Merge A Black Hole"
+    },
+    "hack a business": {
+      "path": "scripts/Hack-A-Business.lua",
+      "name": "Hack A Business"
+    },
+    "merge anime defender": {
+      "path": "scripts/Merge-Anime-Defender.lua",
+      "name": "Merge Anime Defender"
+    },
+    "cliff mansion tycoon": {
+      "path": "scripts/Cliff-Mansion-Tycoon.lua",
+      "name": "Cliff Mansion Tycoon"
+    },
+    "clean your keycaps": {
+      "path": "scripts/Clean-Your-Keycaps.lua",
+      "name": "Clean Your Keycaps"
+    },
+    "my sword empire": {
+      "path": "scripts/My-Sword-Empire.lua",
+      "name": "My Sword Empire"
+    },
+    "catch a monster": {
+      "path": "scripts/Catch-A-Monster.lua",
+      "name": "Catch A Monster"
+    },
+    "pickaxe tycoon": {
+      "path": "scripts/Pickaxe-Tycoon.lua",
+      "name": "Pickaxe Tycoon"
+    },
+    "merge a squishy": {
+      "path": "scripts/Merge-A-Squishy.lua",
+      "name": "Merge A Squishy"
+    },
+    "coach a fighter": {
+      "path": "scripts/Coach-A-Fighter.lua",
+      "name": "Coach A Fighter"
+    },
+    "build a gun army": {
+      "path": "scripts/Build-A-Gun-Army.lua",
+      "name": "Build A Gun Army"
+    },
+    "bid for anime": {
+      "path": "scripts/Bid-For-Anime.lua",
+      "name": "Bid For Anime"
+    },
+    "build a slime defense": {
+      "path": "scripts/Build-A-Slime-Defense.lua",
+      "name": "Build A Slime Defense"
+    },
+    "build a zoo": {
+      "path": "scripts/Build-A-Zoo.lua",
+      "name": "Build A Zoo"
+    },
+    "blox fruits": {
+      "path": "scripts/Blox-Fruits.lua",
+      "name": "Blox Fruits"
+    },
+    "search for the needle": {
+      "path": "scripts/Search-For-The-Needle.lua",
+      "name": "Search For The Needle"
+    },
+    "swing for eggs": {
+      "path": "scripts/Swing-For-Eggs.lua",
+      "name": "Swing For Eggs"
+    },
+    "steal from the rich!": {
+      "path": "scripts/Steal-From-The-Rich.lua",
+      "name": "Steal From The Rich!"
+    },
+    "huss valley": {
+      "path": "scripts/Huss-Valley.lua",
+      "name": "Huss Valley"
+    },
+    "fling things and people": {
+      "path": "scripts/Fling-Things-and-People.lua",
+      "name": "Fling Things and People"
+    },
+    "death ball": {
+      "path": "scripts/Death-Ball.lua",
+      "name": "Death Ball"
+    },
+    "blade ball": {
+      "path": "scripts/Blade-Ball.lua",
+      "name": "Blade Ball"
+    },
+    "hypershot": {
+      "path": "scripts/Hypershot.lua",
+      "name": "Hypershot!"
+    },
+    "hypershot!": {
+      "path": "scripts/Hypershot.lua",
+      "name": "Hypershot!"
+    },
+    "cold war": {
+      "path": "scripts/Cold-War.lua",
+      "name": "Cold War"
+    },
+    "grow a chicken fighter": {
+      "path": "scripts/Grow-a-Chicken-Fighter.lua",
+      "name": "Grow a Chicken Fighter"
+    },
+    "block tycoon": {
+      "path": "scripts/Block-Tycoon.lua",
+      "name": "Block Tycoon"
+    },
+    "ball vs ball": {
+      "path": "scripts/Ball-VS-Ball.lua",
+      "name": "Ball VS Ball"
+    },
+    "sniper arena": {
+      "path": "scripts/Sniper-Arena.lua",
+      "name": "Sniper Arena"
+    },
+    "deadline": {
+      "path": "scripts/Deadline.lua",
+      "name": "Deadline"
+    },
+    "steal from the rich": {
+      "path": "scripts/Steal-From-The-Rich.lua",
+      "name": "Steal From The Rich"
+    },
+    "steal and escape police": {
+      "path": "scripts/Steal-and-Escape-Police.lua",
+      "name": "Steal and Escape Police"
+    },
+    "+1 shield per click": {
+      "path": "scripts/Shield-Per-Click.lua",
+      "name": "+1 Shield Per Click"
+    }
+  }
+}

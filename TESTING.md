@@ -1,32 +1,29 @@
-# MorantxHub release verification
+# Live-game compatibility testing
 
-## Current status
+This repository publishes **188 game-specific scripts plus Universal**, corresponding to the readable [source repository](https://github.com/lildanlid1/MorantxHub-Scripts). The build/verification tooling checks encoded source integrity and assets; a human must still confirm live-game behavior.
 
-This repository contains the obfuscation builder and a GitHub Actions publishing workflow. A build passing the encoder/decoder test does not prove Roblox gameplay works. The publisher must complete successfully before scripts are distributed.
+| Game | Priority | What to test | Live status |
+| --- | --- | --- | --- |
+| **Sell Lemons** | Baseline | Loader, MorantxUI, purchase/sell automation, toggle shutdown | Readable version reported working; protected version not yet live-tested |
+| **Sell Ores** | High | Identification, UI, selling automation, error handling | Unverified |
+| **RIVALS** | High | Correct game selection, UI, unload/cleanup | Unverified |
+| **Blox Fruits** | High | Each supported sea/place ID, character initialization, UI, non-destructive options | Unverified |
+| **Anime Dice** | High | UI startup, settings and automation toggles | Unverified |
+| **Steal An Egg** | High | Item pickup/return and toggle shutdown | Unverified |
+| **Arsenal** | Medium | UI initialization, one visual feature, unload | Unverified |
+| **Flee the Facility** | Medium | Game state/role detection and UI | Unverified |
+| **Grow a Beehive** | Medium | Load/enable/disable loop, missing-instance handling | Unverified |
+| **Prospecting** | Medium | UI and current remote compatibility | Unverified |
 
-## Live game test queue
+## Testing procedure
 
-| Game | Focus | Status |
-| --- | --- | --- |
-| Sell Lemons | Baseline loader, UI, and one working toggle | Reported working before release obfuscation; re-test required |
-| Sell Ores | Detection, UI, collection automation | Unverified |
-| RIVALS | Game-specific selection (not Universal), UI, unload | Unverified |
-| Blox Fruits | All supported sea place IDs, character initialization, UI | Unverified |
-| Anime Dice | UI load, settings, toggles | Unverified |
-| Steal An Egg | Egg detection, pickup, delivery, speed controls | Unverified |
-| Arsenal | UI load, aim/visual feature, unload | Unverified |
-| Flee the Facility | UI load and game state detection | Unverified |
-| Grow a Beehive | Instance availability and automation start/stop | Unverified |
-| Prospecting | Loading and one feature against current remotes | Unverified |
+1. Open the named Roblox game and note the current PlaceId and GameId.
+2. Use the public **MorantxHub** loader URL shown in the README.
+3. Check the game-specific script loads rather than the Universal fallback.
+4. Confirm MorantxUI displays **once** and controls are responsive.
+5. Test one non-destructive feature. Enable it, verify the expected behavior, then disable it.
+6. Check the executor console for warnings/errors. When available, inspect `getgenv().__MorantxLoaderState.lastError`.
+7. Test re-execution, unload, and respawn as appropriate. Verify toggles do not leave runaway loops.
+8. Report the game, PlaceId/GameId, observed behavior, executor, and exact first error line.
 
-## Minimum acceptance checks
-
-1. Confirm the loader picks the intended script rather than Universal.
-2. Confirm the game-specific UI opens exactly once with no ordinary/default UI duplication.
-3. Enable one non-destructive feature; verify the effect and disable it.
-4. Check the executor console and the Morantx loader's lastError state.
-5. Repeat using the release repository's obfuscated URL.
-6. Verify scripts do not fetch code from the source repository, particularly before changing the source to private.
-7. Confirm no keys, secrets, or private source URLs are required at runtime.
-
-Never claim a script passed merely because it compiled, decoded, or displayed a UI.
+**Limitations:** GitHub-based source/decoder tests cannot run Roblox services, remotes, UI, character lifecycle events, or executor-specific APIs. Unverified entries should not be advertised as fully working.
