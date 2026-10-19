@@ -147,11 +147,18 @@ const lua=[
 return {content:lua,sourceBytes:raw.length,protectedChars:lua.length,blocks:blocks.length,compressedBytes:blocks.reduce((s,v)=>s+v.packed,0)};
 }
 const branch=options.branch||"heavy-release-20261019";
-const latest=async(repo,ref)=>{let head=JSON.parse((await tools.mcp__GitHub__fetch({url:"https://api.github.com/repos/"+repo+"/git/refs/heads/"+ref})).result.content).object.sha;
-let commit=JSON.parse((await tools.mcp__GitHub__fetch({url:"https://api.github.com/repos/"+repo+"/git/commits/"+head})).result.content);
-let tree=JSON.parse((await tools.mcp__GitHub__fetch({url:"https://api.github.com/repos/"+repo+"/git/trees/"+commit.tree.sha+"?recursive=1"})).result.content);
-if(tree.truncated)throw Error("Truncated git tree");return {head,tree:commit.tree.sha,files:tree.tree.filter(x=>x.type==="blob")};};
-const [src,main,stage]=await Promise.all([latest(SRC,"main"),latest(DST,"main"),latest(DST,branch)]);
+const [sourceTree,mainTree,stageTree,stageRef]=await Promise.all([
+  tools.mcp__GitHub__fetch({url:"https://api.github.com/repos/"+SRC+"/git/trees/main?recursive=1"}),
+  tools.mcp__GitHub__fetch({url:"https://api.github.com/repos/"+DST+"/git/trees/main?recursive=1"}),
+  tools.mcp__GitHub__fetch({url:"https://api.github.com/repos/"+DST+"/git/trees/"+branch+"?recursive=1"}),
+  tools.mcp__GitHub__fetch({url:"https://api.github.com/repos/"+DST+"/git/refs/heads/"+branch})
+]);
+const parse=x=>JSON.parse(x.result.content);
+const sr=parse(sourceTree),ma=parse(mainTree),st=parse(stageTree);
+if(sr.truncated||ma.truncated||st.truncated)throw Error("Truncated git tree");
+const src={files:sr.tree.filter(x=>x.type==="blob")},
+main={files:ma.tree.filter(x=>x.type==="blob")},
+stage={head:parse(stageRef).object.sha,tree:st.sha,files:st.tree.filter(x=>x.type==="blob")};
 const scripts=["loader.lua","library/MorantxUI.lua",...src.files.filter(x=>x.path.startsWith("scripts/")&&x.path.endsWith(".lua")).map(x=>x.path).sort()];
 if(scripts.length!==193)throw Error("Unexpected source script count: "+scripts.length);
 const orig=new Map(main.files.map(x=>[x.path,x.sha])),staged=new Map(stage.files.map(x=>[x.path,x.sha]));
@@ -163,10 +170,9 @@ const part=selected.slice(i,i+(options.parallel||3));
 const block=await Promise.all(part.map(async p=>{const f=(await tools.mcp__GitHub__fetch_file({repository_full_name:SRC,path:p})).result;
 if(!f.content||f.content.length<200)throw Error("Missing readable contents: "+p);
 const revised=f.content.split(OLD).join(NEW),data=wrapper(utf8(revised),p);
-const blob=(await tools.mcp__GitHub__create_blob({repository_full_name:DST,content:data.content,encoding:"utf-8"})).result.sha;
-return {path:p,sha:blob,originalSourceBytes:data.sourceBytes,protectedChars:data.protectedChars,blocks:data.blocks};}));
+return {path:p,content:data.content,originalSourceBytes:data.sourceBytes,protectedChars:data.protectedChars,blocks:data.blocks};}));
 result.push(...block);}
-const tree=(await tools.mcp__GitHub__create_tree({repository_full_name:DST,base_tree_sha:stage.tree,tree_elements:result.map(x=>({path:x.path,mode:"100644",type:"blob",sha:x.sha}))})).result.sha;
+const tree=(await tools.mcp__GitHub__create_tree({repository_full_name:DST,base_tree_sha:stage.tree,tree_elements:result.map(x=>({path:x.path,mode:"100644",type:"blob",content:x.content}))})).result.sha;
 const commit=(await tools.mcp__GitHub__create_commit({repository_full_name:DST,parent_sha:stage.head,tree_sha:tree,message:"Stage encrypted LZ protected Lua scripts ("+result.length+" files)"})).result.sha;
 const advanced=(await tools.mcp__GitHub__update_ref({repository_full_name:DST,branch_name:branch,sha:commit,expected_sha:stage.head})).result.success;
 if(!advanced)throw Error("Staging branch did not advance");
