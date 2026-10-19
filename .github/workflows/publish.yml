@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/publish.yml'
       - 'tools/build.mjs'
+      - 'tools/verify.mjs'
   workflow_dispatch:
   schedule:
     - cron: '17 3 * * *'
@@ -43,6 +44,9 @@ jobs:
 
       - name: Preserve bundled UI assets
         run: cp -a _source/assets ./assets
+
+      - name: Verify complete Lua and asset parity
+        run: node tools/verify.mjs _source .
 
       - name: Publish release
         run: |
