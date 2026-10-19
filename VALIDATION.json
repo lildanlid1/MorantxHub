@@ -1,0 +1,27 @@
+{
+  "project": "MorantxHub",
+  "sourceRepository": "lildanlid1/MorantxHub-Scripts",
+  "sourceCommit": "50295ecbd0f51bc680e0408d69e9995deaedc711",
+  "releaseMethod": "Direct GitHub Git data API via staging branch",
+  "luaFiles": 193,
+  "gameSpecificScripts": 188,
+  "universalFallbacks": 1,
+  "assetFiles": 73,
+  "allSourceScriptPathsPresent": true,
+  "allAssetsMatchOriginalGitBlobHashes": true,
+  "allBlocksPassedBuildTimeDecode": true,
+  "independentlyDecoded": [
+    "loader.lua",
+    "scripts/Sell-Lemons.lua",
+    "scripts/RIVALS.lua",
+    "scripts/Universal.lua",
+    "scripts/Arsenal.lua",
+    "scripts/Anime-Dice.lua",
+    "scripts/Prospecting.lua",
+    "scripts/Steal-An-Egg.lua"
+  ],
+  "independentDecoderMatches": 8,
+  "protection": "Encrypted shuffled Base85 chunks containing custom LZ-coded instruction data, randomized identifiers/keys, Adler32 block integrity; not full Luau VM virtualization",
+  "liveRobloxGameplayTested": false,
+  "claimLimitations": "No full in-game or executor compatibility verification; this release is freshly generated from the private readable source, not binary-identical to the previously generated conversation ZIP."
+}
