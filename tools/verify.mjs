@@ -54,7 +54,8 @@ function unpack85(wrapper, file, expectedLength) {
         value = value * 85 + digit;
       }
       for (let j = width; j < 5; j++) value = value * 85 + 84;
-      for (let j = 1; j <= Math.min(width - 1, remaining - n); j++) {
+      const outputWidth = Math.min(width - 1, remaining - n);
+      for (let j = 1; j <= outputWidth; j++) {
         if (offset >= expectedLength) fail('Payload byte overflow: ' + file);
         let byte = Math.floor(value / (2 ** (8 * (4 - j)))) % 256;
         seed = next32(seed);
