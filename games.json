@@ -721,10 +721,6 @@
       "name": "Blade Ball"
     },
     {
-      "path": "scripts/Build-A-Base-And-Steal.lua",
-      "name": "Build a Base and Steal"
-    },
-    {
       "path": "scripts/Hypershot.lua",
       "name": "Hypershot!"
     },
