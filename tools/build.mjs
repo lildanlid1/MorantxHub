@@ -118,10 +118,6 @@ for(const file of ['loader.lua','library/MorantxUI.lua',...paths]){
 save('games.json',JSON.stringify(catalog,null,2)+'\n');
 save('games.md',fs.readFileSync(path.join(input,'games.md'),'utf8').split(oldUrl).join(newUrl));
 const number=catalog.games.filter(g=>g.path!=='scripts/Universal.lua').length;
-save('README.md','# MorantxHub\n\n**'+number+' games**, plus Universal fallback.\n\nScripts: scripts/  |  UI: library/\n\nLoad using:\n\n'+
- '    loadstring(game:HttpGet("https://raw.githubusercontent.com/lildanlid1/MorantxHub/main/loader.lua"))()\n\n'+
- '[Game list and features](games.md) | [Testing notes](TESTING.md)\n\nLive Roblox gameplay has not been verified by the release builder.\n');
-save('TESTING.md','# Game testing\n\nSell Lemons was reported working before obfuscation. Re-test it as the baseline.\n\nSuggested unverified tests: RIVALS, Blox Fruits, Anime Dice, Steal An Egg, Arsenal, Sell Ores, Flee the Facility.\n\nVerify the correct game script is selected, UI appears, a safe feature works, toggles stop correctly, and errors are absent.\n\nThe release builder retains game-specific logic and only redirects old MorantxHub-Scripts URLs. Not all scripts have been tested in live games.\n\nRepository visibility must be changed separately in GitHub Settings. Obfuscation is reversible by determined users.\n');
 const summary={gameCount:number,catalogEntries:catalog.games.length,luaFiles:report.length,duplicatesRemoved:duplicates,redirectedReferences:report.reduce((n,r)=>n+r.oldUrlReferences,0),files:report};
 const stageReportPath=path.join(input,'protection-report.json');
 if(fs.existsSync(stageReportPath)){
