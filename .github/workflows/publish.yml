@@ -100,8 +100,9 @@ jobs:
           from pathlib import Path
           report = json.loads(Path("protection-report.json").read_text())
           modes = report["modeCounts"]
-          assert report["totalLua"] == 193, f"Unexpected script inventory: {report['totalLua']}"
-          assert sum(modes.values()) == 193, f"Coverage gap: {modes}"
+          expected = 2 + len(list(Path("_source/scripts").glob("*.lua")))
+          assert report["totalLua"] == expected, f"Unexpected script inventory: {report['totalLua']} != {expected}"
+          assert sum(modes.values()) == expected, f"Coverage gap: {modes}"
           assert modes["vm"] + modes["native"] > 0, "No AST/VM protection applied"
           print("Protection coverage:", modes)
           PY
