@@ -1,3 +1,9 @@
 _source/
+_stage/
+_obscura/
+_luau/
+_luau-build/
 .obfuscation-smoke.lua
 node_modules/
+__pycache__/
+*.pyc
