@@ -123,6 +123,13 @@ save('README.md','# MorantxHub\n\n**'+number+' games**, plus Universal fallback.
  '[Game list and features](games.md) | [Testing notes](TESTING.md)\n\nLive Roblox gameplay has not been verified by the release builder.\n');
 save('TESTING.md','# Game testing\n\nSell Lemons was reported working before obfuscation. Re-test it as the baseline.\n\nSuggested unverified tests: RIVALS, Blox Fruits, Anime Dice, Steal An Egg, Arsenal, Sell Ores, Flee the Facility.\n\nVerify the correct game script is selected, UI appears, a safe feature works, toggles stop correctly, and errors are absent.\n\nThe release builder retains game-specific logic and only redirects old MorantxHub-Scripts URLs. Not all scripts have been tested in live games.\n\nRepository visibility must be changed separately in GitHub Settings. Obfuscation is reversible by determined users.\n');
 const summary={gameCount:number,catalogEntries:catalog.games.length,luaFiles:report.length,duplicatesRemoved:duplicates,redirectedReferences:report.reduce((n,r)=>n+r.oldUrlReferences,0),files:report};
+const stageReportPath=path.join(input,'protection-report.json');
+if(fs.existsSync(stageReportPath)){
+ const stageReport=JSON.parse(fs.readFileSync(stageReportPath,'utf8'));
+ if(stageReport.totalLua!==report.length)throw Error('VM stage file count mismatch');
+ summary.protection=stageReport.modeCounts;
+ save('protection-report.json',JSON.stringify(stageReport,null,2)+'\n');
+}
 save('build-report.json',JSON.stringify(summary,null,2)+'\n');
 save('.obfuscation-smoke.lua',protect('return 7+8\n','test-smoke.lua'));
 console.log(JSON.stringify({gameCount:number,catalogEntries:catalog.games.length,luaFiles:report.length,duplicates,redirectedReferences:summary.redirectedReferences}));
