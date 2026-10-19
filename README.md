@@ -29,3 +29,11 @@ The release builder checks each protected Lua payload against its original sourc
 See [test candidates and instructions](TESTING.md). Sell Lemons was reported functional in its readable form; the obfuscated build and the other games still require live in-game testing.
 
 Obfuscation is not a DRM system and does not guarantee source secrecy.
+
+## Advanced obfuscation pipeline
+
+The **next release pipeline** stages source with a pinned [Obscura Luau obfuscator](https://github.com/vo3pal/obscura) (MIT-licensed) before encrypting and scrambling each Lua payload. VM-mode output is used only when the source parses and compiles; larger or unsupported Luau uses a separately reported native-AST or encrypted transport fallback. This is **not** a Luraph build, and not every file can be guaranteed to be virtualized.
+
+Build sources: [`tools/vm_stage.py`](tools/vm_stage.py), [`tools/build.mjs`](tools/build.mjs), and [`tools/verify.mjs`](tools/verify.mjs). Per-file results will be published in `protection-report.json` **only after the pipeline succeeds**. Until that report is present, the repository contains its previously published obfuscated Lua files, not a verified VM release.
+
+For a private [readable source repository](https://github.com/lildanlid1/MorantxHub-Scripts), create an Actions secret named `SOURCE_REPO_TOKEN` in this release repository using a fine-grained token limited to that source repository with **Contents: Read** permission. GitHub Actions must also have an available runner; a zero-step run cannot execute the build.
