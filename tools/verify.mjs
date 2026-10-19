@@ -13,7 +13,70 @@ const relative = file => path.relative(src, file).split(path.sep).join('/');
 const sourceText = p => fs.readFileSync(path.join(src, p), 'utf8').split(oldUrl).join(newUrl);
 const releaseText = p => fs.readFileSync(path.join(dst, p), 'utf8');
 const same = (a, b) => Buffer.compare(a, b) === 0;
+
+function unpack85(wrapper, file, expectedLength) {
+  const match = wrapper.match(/^local (\w+)=\{([\s\S]*?)\}\nlocal (\w+)=\{([\s\S]*?)\}\nlocal (\w+)=\{([\s\S]*?)\}\nlocal (\w+)=("(?:\\.|[^"\\])*")\n/);
+  if (!match) fail('Malformed Base85 block header: ' + file);
+  const chunks = JSON.parse('[' + match[2] + ']');
+  const positions = JSON.parse('[' + match[4] + ']');
+  const seeds = JSON.parse('[' + match[6] + ']');
+  const alphabet = JSON.parse(match[8]);
+  if (new Set(alphabet).size !== 85 || alphabet.length !== 85)
+    fail('Invalid protected alphabet: ' + file);
+  if (chunks.length !== seeds.length || chunks.length !== positions.length)
+    fail('Shuffled block count mismatch: ' + file);
+  const ordered = new Set(positions);
+  if (ordered.size !== chunks.length ||
+      [...ordered].some(x => !Number.isInteger(x) || x < 1 || x > chunks.length))
+    fail('Invalid protected block permutation: ' + file);
+  const checksum = wrapper.match(/if \w+\*65536\+\w+~=(\d+) then error\("Protected payload integrity failure"/);
+  if (!checksum) fail('Missing payload integrity check: ' + file);
+  const code = Buffer.alloc(expectedLength);
+  const decodeMap = new Map([...alphabet].map((c, i) => [c, i]));
+  const next32 = input => {
+    input ^= input << 13;
+    input ^= input >>> 17;
+    input ^= input << 5;
+    return input >>> 0;
+  };
+  let offset = 0, a = 1, b = 0;
+  for (let block = 0; block < positions.length; block++) {
+    const part = chunks[positions[block] - 1];
+    const remaining = Math.min(2048, expectedLength - block * 2048);
+    let seed = seeds[block] >>> 0;
+    let n = 0;
+    for (let at = 0; at < part.length; at += 5) {
+      const width = Math.min(5, part.length - at);
+      let value = 0;
+      for (let j = 0; j < width; j++) {
+        const digit = decodeMap.get(part[at + j]);
+        if (digit === undefined) fail('Invalid Base85 symbol in ' + file);
+        value = value * 85 + digit;
+      }
+      for (let j = width; j < 5; j++) value = value * 85 + 84;
+      for (let j = 1; j <= Math.min(width - 1, remaining - n); j++) {
+        if (offset >= expectedLength) fail('Payload byte overflow: ' + file);
+        let byte = Math.floor(value / (2 ** (8 * (4 - j)))) % 256;
+        seed = next32(seed);
+        byte ^= (seed >>> 16) & 255;
+        byte = (Math.floor(byte / 8) + (byte % 8) * 32) % 256;
+        byte = (byte - ((seed >>> 8) & 255) + 256) % 256;
+        byte ^= seed & 255;
+        code[offset++] = byte;
+        a = (a + byte) % 65521;
+        b = (b + a) % 65521;
+        n++;
+      }
+    }
+    if (n !== remaining) fail('Protected block length mismatch: ' + file);
+  }
+  if (offset !== expectedLength || b * 65536 + a !== Number(checksum[1]))
+    fail('Protected payload length/checksum mismatch: ' + file);
+  return code;
+}
+
 function unpack(wrapper, file, expectedLength) {
+  if (/^local _[a-f0-9]{6}_0=\{/.test(wrapper)) return unpack85(wrapper, file, expectedLength);
   const layered = wrapper.match(/^local Z=\{([\s\S]*?)\}\nlocal A=("(?:\\.|[^"\\])*")\n/);
   const legacy = wrapper.match(/^local a=\{([\s\S]*?)\}\nlocal k=(\d+)/);
   if (!layered && !legacy) fail('Not an obfuscated Lua file: ' + file);
@@ -96,6 +159,7 @@ const report = {
   uniqueCatalogEntries: catalog.games.length,
   gameSpecificEntries: catalog.games.filter(g => g.path !== 'scripts/Universal.lua').length,
   sourceReferencesRedirectedToRelease: true,
+  protectionLayer: 'Build input decoded byte-exact (may include Obscura AST/VM stage)',
   testType: 'Byte-exact static decode/integrity checks, not live Roblox execution'
 };
 console.log(JSON.stringify(report, null, 2));
