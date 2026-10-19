@@ -27,12 +27,21 @@ jobs:
       - name: Checkout protected release repository
         uses: actions/checkout@v4
 
+      - name: Validate private source access
+        env:
+          SOURCE_TOKEN: ${{ secrets.SOURCE_REPO_TOKEN }}
+        run: |
+          if [ -z "$SOURCE_TOKEN" ]; then
+            echo "::error::Set SOURCE_REPO_TOKEN (fine-grained PAT with Contents:Read on MorantxHub-Scripts) in this repository's Actions secrets."
+            exit 1
+          fi
+
       - name: Checkout readable source
         uses: actions/checkout@v4
         with:
           repository: lildanlid1/MorantxHub-Scripts
           path: _source
-          token: ${{ secrets.SOURCE_REPO_TOKEN || github.token }}
+          token: ${{ secrets.SOURCE_REPO_TOKEN }}
           persist-credentials: false
 
       - name: Checkout pinned Luau VM/AST obfuscator
