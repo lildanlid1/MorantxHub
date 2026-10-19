@@ -60,6 +60,21 @@ jobs:
       - name: Install obfuscator dependencies
         run: python -m pip install -r _obscura/requirements.txt
 
+      - name: Checkout pinned Luau compiler
+        uses: actions/checkout@v4
+        with:
+          repository: luau-lang/luau
+          ref: 9d7748a4f324213a18cb8283fa2a77c330225fa0
+          path: _luau
+          persist-credentials: false
+
+      - name: Build Luau syntax compiler
+        run: |
+          cmake -S _luau -B _luau-build -DCMAKE_BUILD_TYPE=Release -DLUAU_BUILD_TESTS=OFF
+          cmake --build _luau-build --target Luau.Compile.CLI --config Release --parallel 4
+          test -x _luau-build/luau-compile
+          echo "$PWD/_luau-build" >> "$GITHUB_PATH"
+
       - name: Transform Luau with compatibility-sensitive VM/AST layers
         run: python tools/vm_stage.py _source _stage _obscura
 
